@@ -227,21 +227,21 @@ let player2 = {
 };
 
 let blobImages = {
-    damageImg: "../Images/blob_damaged.png",
-    idleImg: "../Images/blob_idle.png",
-    longRangeImg: "../Images/blob_long_range.png",
-    loseImg: "../Images/blob_lose.png",
-    shortRangeImg: "../Images/blob_short_range.png",
-    shotImg: "../Images/blob_shot.png",
-    wideRangeImg: "../Images/blob_wide_range.png",
-    winImg: "../Images/blob_win.png",
+    damageImg: "Images/blob_damaged.png",
+    idleImg: "Images/blob_idle.png",
+    longRangeImg: "Images/blob_long_range.png",
+    loseImg: "Images/blob_lose.png",
+    shortRangeImg: "Images/blob_short_range.png",
+    shotImg: "Images/blob_shot.png",
+    wideRangeImg: "Images/blob_wide_range.png",
+    winImg: "Images/blob_win.png",
 }
 
 let speciaIconImages={
-    unknownImg:"../Images/question_mark.png",
-    shortRangeImg:"../Images/short_range.png",
-    wideRangeImg:"../Images/wide_range.png",
-    longRangeImg:"../Images/long_range.png"
+    unknownImg:"Images/question_mark.png",
+    shortRangeImg:"Images/short_range.png",
+    wideRangeImg:"Images/wide_range.png",
+    longRangeImg:"Images/long_range.png"
 }
 
 //2: Create an attack, movement, and delay objects
@@ -497,9 +497,9 @@ const gamepads = navigator.getGamepads();
     player2.gridId = "grid-2";
 
     //5: Show player health in the text content (change this later)
-    player1.element.html('<img class="pl" src="../Images/blob_idle.png" />');
+    player1.element.html('<img class="pl" src="Images/blob_idle.png" />');
     //   player2.element.text(player2.HP);
-    player2.element.html('<img class="pl" src="../Images/blob_idle.png" />');
+    player2.element.html('<img class="pl" src="Images/blob_idle.png" />');
 
     //Set up the health UI
     player1.healthUI.attr("max", player1.HP)

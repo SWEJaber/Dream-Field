@@ -59,7 +59,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    background-image: url("../../Images/Blob Icon.png");
+    background-image: url("../Images/Blob Icon.png");
     transform: scaleX(-1);
   }
 
