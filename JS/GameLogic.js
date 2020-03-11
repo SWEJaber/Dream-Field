@@ -241,7 +241,7 @@ let speciaIconImages={
     unknownImg:"Images/question_mark.png",
     shortRangeImg:"Images/short_range.png",
     wideRangeImg:"Images/wide_range.png",
-    longRangeImg:"Images/long_range.png"
+    longRangeImg:"Images/long_range.png",
 }
 
 //2: Create an attack, movement, and delay objects
