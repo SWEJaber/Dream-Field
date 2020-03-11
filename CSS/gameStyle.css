@@ -1,119 +1,201 @@
+body {
+  display: flex;
 
+  align-items: center;
 
+  justify-content: center;
 
-body{
-    display: flex;
+  background-color: green;
 
-    align-items: center;
-
-    justify-content: center;
-
-    background-color: green;
-
-    /* height:100%;
+  /* height:100%;
     width: 100%; */
-
 }
 
-.screen{
-    width: 100vw;
-    height: 100vh;
+.screen {
+    width: 1440px;
+    height: 1024px;
     background-color: black !important;
+  }
+  
+#game-play {
+    background-color: white !important;
 }
 
-
-.HUD{
+.HUD {
     display: flex;
     justify-content: space-between;
-}
+    position: relative;
+    /* margin-bottom: 20%; */
+    height:13.8671%;
+    width: 100%;
 
-.HUD > div{
+    border: black 1px solid;
+  }
+
+  .PlayerHUD{
+    grid-template-columns: 1fr 2fr;
+    position: relative;
     display: grid;
-    
-    border: black solid 3px;
-    width: 40.48%;
+
+    border: black solid 1px;
+    width: 40.83333%;
     height: 100%;
 }
 
-
-.CharacterIcon{
-    grid-row: 1/3;
+.special{
+    position: relative;
+    top:20%;
+    height:77.5%;
+    border: solid 1px red;
 }
 
-.HealthBar{
-    grid-column: 2/4;
+.SpecialIcon{
+    width: 15%; 
+    /* height:100%; */
+    background-color:pink; 
 }
 
 
-#HUD-1{
-    grid-template-columns: 30% 70%;
-}
+/* progress[value]{
+    -webkit-appearance: none;
+   appearance: none;
+} */
 
-#HUD-2{
-    grid-template-columns: 70% 30%;
-}
-
-.Dreamfield{
-    display: flex;
-    justify-content: center;
-    column-gap: 1.5px;
-
+.SpecialBar::-webkit-progress-bar{
+    width: 85%; 
     background-color: yellow;
-
-    margin-top: 50%;
-    margin-bottom: 50%;
-    /* height: 100%;
-    width: 100%; */
-    
+    /* background-color: red; */
 }
+
+.SpecialBar{
+    width: 85%; 
+    /* background-color: red; */
+}
+
+/* .SpecialBar[value]::-webkit-progress-value {
+    background-color:yellow;
+    border-radius: 2px; 
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+  } */
+
+.HealthBar {
+    grid-column: 2/4;
+    height:100%;
+    /* background-color:limegreen; */
+    padding-top: 15px;
+  }
+
+.CharacterIcon {
+    grid-row: 1/3;
+    width: 100%;
+    background-color: gray;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("../../Images/Blob Icon.png");
+    transform: scaleX(-1);
+  }
+
+
+#PHUD-2 {
+    transform: scaleX(-1);
+}
+
+
+
+
+.Dreamfield {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  
+  top: 35%;
+
+  width: 100%;
+  height: 36.398%;
+  border: black 1px solid;
+  /* column-gap: 1.5px; */
+  /* background-color: yellow; */
+  /* 
+  margin-top: 50%;
+  margin-bottom: 50%; */
+  /* height: 100%;
+    width: 100%; */
+}
+
+
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap:2px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 50%;
+  height: 100%;
 
-    border-bottom: 5px solid black;
+  column-gap: 0px;
+  row-gap: -50px;
+  
+
+  /* gap: 2px; */
+  /* border-bottom: 5px solid black; */
 }
 
 
-#grid-1{
-    border-right: 5px solid black;
+
+#grid-1 > .panel{
+  background-image: url("../Images/tile_blue.jpg");
+  transform: scaleX(-1);
 }
 
-#grid-2{
-    border-left: 5px solid black;
+#grid-2  > .panel{
+
+  background-image: url("../Images/tile_red.jpg");
 }
 
-#grid-1 .panel{
-    background-color: blue;
-    padding: 10px;
-
+/* #grid-1 .panel {
+  background-color: blue;
+  padding: 10px;
 }
 
-#grid-2 .panel{
-    background-color: red;
-    padding: 10px;
+#grid-2 .panel {
+  background-color: red;
+  padding: 10px;
+} */
 
+.panel {
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  position: relative;
+  /* margin-top: -5px; */
+  /* width: 52px;
+  height: 21px; */
+
+  /* padding: 5px; */
+  /* width: 33.33%;
+  height: 36.196%; */
+
+  width: 100%;
+  height: 100%;
 }
 
-.panel{
-    position: relative;
+.player {
+  position: relative;
+
+  width: 50px;
+  height: 50px;
+  /* z-index: 9999; */
 }
 
-.player{
-    position: relative;
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    font-size: 50%;
+.pl {
+  position: absolute;
+  width: 500%;
+  height: 500%;
+  
+  left: 0%;
+  top: -280%;
 
-/*     
-    position: absolute;
-    width: 50px;
-    height: 50;
-    left: calc(50% - 254px/2);
-    top: calc(50% - 249px/2 - 83.86px);
+ z-index: 9999;
 
-    background-image: url(../Images/blob.png); */
+
 }
-

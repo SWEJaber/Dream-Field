@@ -1,375 +1,391 @@
 //1: Create players
 let player1 = {
-    //Player position
-    col: 1,      //x axis
-    row: 1,      //y axis
+  //Player position
+  col: 1, //x axis
+  row: 1, //y axis
 
-    getPlayerCoordinates: function () {
-        return "p(" + this.col + "," + this.row + ")";
-    },
+  getPlayerCoordinates: function() {
+    return "p(" + this.col + "," + this.row + ")";
+  },
 
-    element: $('#player1'),
-    grid: [],
-    gridId: "",
+  element: $("#player1"),
+  healthUI:$("#PHUD-1 .HealthBar"),
+  specialUI:$("#PHUD-1 .SpecialBar"),
+  specialIcon:$("#PHUD-1 .SpecialIcon"),
+  grid: [],
+  gridId: "",
 
-    //Health
-    HP: 1000,
+  //Health
+  HP: 1000,
 
-    isAlive: function () {
-        return this.HP > 0;
-    },
+  isAlive: function() {
+    return this.HP > 0;
+  },
 
-    receiveDamage: function (damage) {
-        this.HP -= damage;
+  receiveDamage: function(damage) {
+    this.HP -= damage;
 
-        if (this.HP < 0) {
-            this.HP = 0;
-        }
+    if (this.HP < 0) {
+      this.HP = 0;
+    }
 
-        //Update health visually
-        this.element.text(this.HP)
-    },
+    //Update health visually
+    this.healthUI.attr("value",this.HP)
+  },
 
-    //Special attack
-    chosenSpecialAttack:0,
+  //Special attack
+  chosenSpecialAttack: 0,
 
+  //Timers
+  //Movement
+  movementTimer: 0,
+  increaseMovementTimer: function(timeDifferential) {
+    this.movementTimer += timeDifferential;
+  },
 
-    //Timers
-    //Movement
-    movementTimer: 0,
-    increaseMovementTimer: function (timeDifferential) {
-        this.movementTimer += timeDifferential;
-    },
+  resetMovementTimer: function() {
+    this.movementTimer = 0;
+  },
 
-    resetMovementTimer: function () {
-        this.movementTimer = 0;
-    },
+  //Charge
+  chargeTimer: 0,
+  increaseChargeTimer: function(timeDifferential) {
+    this.chargeTimer += timeDifferential;
+  },
 
-    //Charge
-    chargeTimer: 0,
-    increaseChargeTimer: function (timeDifferential) {
-        this.chargeTimer += timeDifferential;
-    },
+  resetChargeTimer: function() {
+    this.chargeTimer = 0;
+  },
 
-    resetChargeTimer: function () {
-        this.chargeTimer = 0;
-    },
+  //Special
+  specialTimer: 0,
+  increaseSpecialTimer: function(timeDifferential) {
+    this.specialTimer += timeDifferential;
 
-    //Special
-    specialTimer: 0,
-    increaseSpecialTimer: function (timeDifferential) {
-        this.specialTimer += timeDifferential;
-    },
+    this.specialUI.attr("value",this.specialTimer)
+  },
 
-    resetSpecialTimer: function () {
-        this.specialTimer = 0;
-    },
-
-}
+  resetSpecialTimer: function() {
+    this.specialTimer = 0;
+  }
+};
 
 let player2 = {
-    //Player position
-    col: 1,      //x axis
-    row: 1,      //y axis
+  //Player position
+  col: 1, //x axis
+  row: 1, //y axis
 
-    getPlayerCoordinates: function () {
-        return "p(" + this.col + "," + this.row + ")";
-    },
+  getPlayerCoordinates: function() {
+    return "p(" + this.col + "," + this.row + ")";
+  },
 
-    element: $('#player2'),
-    grid: [],
-    gridId: "",
+  element: $("#player2"),
+  healthUI:$("#PHUD-2 .HealthBar"),
+  specialUI:$("#PHUD-2 .SpecialBar"),
+  specialIcon:$("#PHUD-2 .SpecialIcon"),
+  grid: [],
+  gridId: "",
 
-    //Health
-    HP: 1000,
+  //Health
+  HP: 1000,
 
-    isAlive: function () {
-        return this.HP > 0;
-    },
+  isAlive: function() {
+    return this.HP > 0;
+  },
 
-    receiveDamage: function (damage) {
-        this.HP -= damage;
+  receiveDamage: function(damage) {
+    this.HP -= damage;
 
-        if (this.HP < 0) {
-            this.HP = 0;
-        }
+    if (this.HP < 0) {
+      this.HP = 0;
+    }
 
-        //Update health visually
-        this.element.text(this.HP)
-    },
+    //Update health visually
+    this.healthUI.attr("value",this.HP)
+  },
 
-    //Special attack
-    chosenSpecialAttack:0,
+  //Special attack
+  chosenSpecialAttack: 0,
 
-    //Timers
-    //Movement
-    movementTimer: 0,
-    increaseMovementTimer: function (timeDifferential) {
-        this.movementTimer += timeDifferential;
-    },
+  //Timers
+  //Movement
+  movementTimer: 0,
+  increaseMovementTimer: function(timeDifferential) {
+    this.movementTimer += timeDifferential;
+  },
 
-    resetMovementTimer: function () {
-        this.movementTimer = 0;
-    },
+  resetMovementTimer: function() {
+    this.movementTimer = 0;
+  },
 
-    //Charge
-    chargeTimer: 0,
-    increaseChargeTimer: function (timeDifferential) {
-        this.chargeTimer += timeDifferential;
-    },
+  //Charge
+  chargeTimer: 0,
+  increaseChargeTimer: function(timeDifferential) {
+    this.chargeTimer += timeDifferential;
+  },
 
-    resetChargeTimer: function () {
-        this.chargeTimer = 0;
-    },
+  resetChargeTimer: function() {
+    this.chargeTimer = 0;
+  },
 
-    //Special
-    specialTimer: 0,
-    increaseSpecialTimer: function (timeDifferential) {
-        this.specialTimer += timeDifferential;
-    },
+  //Special
+  specialTimer: 0,
+  increaseSpecialTimer: function(timeDifferential) {
+    this.specialTimer += timeDifferential;
 
-    resetSpecialTimer: function () {
-        this.specialTimer = 0;
-    },
-}
+    this.specialUI.attr("value",this.specialTimer)
+  },
+
+  resetSpecialTimer: function() {
+    this.specialTimer = 0;
+  }
+};
 
 //2: Create an attack, movement, and delay objects
 let movement = {
-    move: function (player) {
-        let playerElement = player.element;
-        playerElement.detach().appendTo(player.grid[player.row][player.col]);
-    },
+  move: function(player) {
+    let playerElement = player.element;
+    playerElement.detach().appendTo(player.grid[player.row][player.col]);
+  },
 
-    moveHorizontally: function (player, numStep) {
-        let newCol = player.col + numStep;
+  moveHorizontally: function(player, numStep) {
+    let newCol = player.col + numStep;
 
+    if (-1 < newCol && newCol < 3) {
+      //1: Change the current position to the new position
+      player.col = newCol;
 
-        if (-1 < newCol && newCol < 3) {
+      //2: Move player to the destination panel
+      this.move(player);
+    } else {
+      console.log("Can't move, already at the egde");
+    }
+  },
 
-            //1: Change the current position to the new position
-            player.col = newCol;
+  moveVertically: function(player, numStep) {
+    let newRow = player.row + numStep;
 
-            //2: Move player to the destination panel
-            this.move(player);
+    if (-1 < newRow && newRow < 3) {
+      //1: Change the current position to the new position
+      player.row = newRow;
 
-        } else {
-            console.log("Can't move, already at the egde");
+      //2: Move player to the destination panel
+      this.move(player);
+    } else {
+      console.log("Can't move, already at the egde");
+    }
+  },
 
-        }
-    },
+  moveUp: function(player) {
+    this.moveVertically(player, -1);
+  },
 
-    moveVertically: function (player, numStep) {
-        let newRow = player.row + numStep;
+  moveDown: function(player) {
+    this.moveVertically(player, 1);
+  },
 
+  moveLeft: function(player) {
+    this.moveHorizontally(player, -1);
+  },
 
-        if (-1 < newRow && newRow < 3) {
-            //1: Change the current position to the new position
-            player.row = newRow;
-
-            //2: Move player to the destination panel
-            this.move(player);
-
-        } else {
-            console.log("Can't move, already at the egde");
-
-        }
-    },
-
-    moveUp: function (player) {
-        this.moveVertically(player, -1);
-    },
-
-    moveDown: function (player) {
-        this.moveVertically(player, 1);
-    },
-
-    moveLeft: function (player) {
-        this.moveHorizontally(player, -1);
-    },
-
-    moveRight: function (player) {
-        this.moveHorizontally(player, 1);
-    },
-}
+  moveRight: function(player) {
+    this.moveHorizontally(player, 1);
+  }
+};
 
 let attack = {
-    //Long range
-    smallShotDamage: 1,
-    chargeShotDamage: 10,
+  //Long range
+  smallShotDamage: 1,
+  chargeShotDamage: 10,
 
-    attackLongRanged: function (affectedPlayer, playerARow, damage) {
+  attackLongRanged: function(affectedPlayer, playerARow, damage) {
+    //This condition should be changed if more than one players are on the same grid.
+    let arePlayersOnTheSameRow = playerARow == affectedPlayer.row;
 
-        //This condition should be changed if more than one players are on the same grid.
-        let arePlayersOnTheSameRow = playerARow == affectedPlayer.row;
+    if (affectedPlayer.isAlive() && arePlayersOnTheSameRow) {
+      affectedPlayer.receiveDamage(damage);
+    }
+  },
 
-        if (affectedPlayer.isAlive() && arePlayersOnTheSameRow) {
-            affectedPlayer.receiveDamage(damage);
-            affectedPlayer.element.text(affectedPlayer.HP)
+  shootSmall: function(playerA, playerB) {
+    this.attackLongRanged(playerB, playerA.row, this.smallShotDamage);
+  },
+  shootCharge: function(playerA, playerB) {
+    this.attackLongRanged(playerB, playerA.row, this.chargeShotDamage);
+  },
+
+  //Short range
+  slashShortDamage: 100,
+  slashLongDamage: 150,
+  slashWideDamage: 150,
+
+  attackShortRange(affectedPlayer, areaRange, damage) {
+    if (affectedPlayer.isAlive() && areaRange != undefined) {
+      //Within length (col)
+      if (
+        areaRange[0][0] <= affectedPlayer.col &&
+        affectedPlayer.col <= areaRange[0][1]
+      ) {
+        //Within width (row)
+        if (
+          areaRange[1][0] <= affectedPlayer.row &&
+          affectedPlayer.row <= areaRange[1][1]
+        ) {
+          affectedPlayer.receiveDamage(damage);
         }
-    },
+      }
+    }
+  },
 
-    shootSmall: function (playerA, playerB) {
-        this.attackLongRanged(playerB, playerA.row, this.smallShotDamage);
-    },
-    shootCharge: function (playerA, playerB) {
-        this.attackLongRanged(playerB, playerA.row, this.chargeShotDamage);
-    },
+  calculateAttackAreaRange(player, colLength, rowLength) {
+    //1: Calculate the length of the attack on the 2nd grid
+    let columnLimit;
+    let columnLimitCondition;
 
+    let ranges = [
+      [], //Column range  (The number of columns that the attack covers)
+      []
+    ]; //Row range   (The number of rows that the attack covers)
 
-    //Short range
-    slashShortDamage: 100,
-    slashLongDamage: 150,
-    slashWideDamage: 150,
+    //Handle column range
+    if (player.gridId == "grid-1") {
+      ranges[0].push(0);
+      columnLimit = player.col + colLength;
 
-    attackShortRange(affectedPlayer, areaRange, damage) {
-        if (affectedPlayer.isAlive() && areaRange != undefined) {
-            //Within length (col)
-            if (areaRange[0][0] <= affectedPlayer.col && affectedPlayer.col <= areaRange[0][1]) {
+      //If you want to generalize this, replace two with column size.
+      columnLimitCondition = columnLimit > 2;
 
-                //Within width (row)
-                if (areaRange[1][0] <= affectedPlayer.row && affectedPlayer.row <= areaRange[1][1]) {
-                    affectedPlayer.receiveDamage(damage);
-                    affectedPlayer.element.text(affectedPlayer.HP);
-                }
-            }
+      //Handle column length
+      if (columnLimitCondition) {
+        ranges[0].push(columnLimit - 3);
+      } else {
+        //Meaning ther other player is not in range of the attack
+        return undefined;
+      }
+    } else if (player.gridId == "grid-2") {
+      ranges[0].push(2);
+      columnLimit = player.col - colLength;
+      columnLimitCondition = columnLimit < 0;
 
+      //Handle column length
+      if (columnLimitCondition) {
+        ranges[0].unshift(columnLimit + 3);
+      } else {
+        //Meaning ther other player is not in range of the attack
+        return undefined;
+      }
+    } else {
+      return undefined;
+    }
+    //Handle row length
+    if (rowLength == 1) {
+      ranges[1].push(player.row);
+      ranges[1].push(player.row);
+    } else if (rowLength == 2) {
+      ranges[1].push(player.row - 1);
+      ranges[1].push(player.row + 1);
+    } else {
+      return undefined;
+    }
 
-        }
-    },
+    console.log(ranges);
 
-    calculateAttackAreaRange(player, colLength, rowLength) {
-        //1: Calculate the length of the attack on the 2nd grid
-        let columnLimit;
-        let columnLimitCondition;
+    return ranges;
+  },
 
-        let ranges = [[],         //Column range  (The number of columns that the attack covers)
-        []];        //Row range   (The number of rows that the attack covers)
+  slashShort: function(playerA, playerB) {
+    let areaRange = this.calculateAttackAreaRange(playerA, 1, 1);
 
+    this.attackShortRange(playerB, areaRange, this.slashShortDamage);
+  },
 
+  slashLong: function(playerA, playerB) {
+    let areaRange = this.calculateAttackAreaRange(playerA, 2, 1);
 
-        //Handle column range
-        if (player.gridId == "grid-1") {
-            ranges[0].push(0);
-            columnLimit = player.col + colLength;
+    this.attackShortRange(playerB, areaRange, this.slashLongDamage);
+  },
 
-            //If you want to generalize this, replace two with column size.
-            columnLimitCondition = columnLimit > 2;
+  slashWide: function(playerA, playerB) {
+    let areaRange = this.calculateAttackAreaRange(playerA, 1, 2);
 
-            //Handle column length
-            if (columnLimitCondition) {
-                ranges[0].push(columnLimit - 3);
-            } else {
-                //Meaning ther other player is not in range of the attack
-                return undefined;
-            }
-
-        } else if (player.gridId == "grid-2") {
-            ranges[0].push(2);
-            columnLimit = player.col - colLength;
-            columnLimitCondition = columnLimit < 0;
-
-            //Handle column length
-            if (columnLimitCondition) {
-                ranges[0].unshift(columnLimit + 3);
-            } else {
-                //Meaning ther other player is not in range of the attack
-                return undefined;
-            }
-        } else {
-            return undefined;
-        }
-        //Handle row length 
-        if (rowLength == 1) {
-            ranges[1].push(player.row);
-            ranges[1].push(player.row);
-
-        } else if (rowLength == 2) {
-            ranges[1].push(player.row - 1);
-            ranges[1].push(player.row + 1);
-        } else {
-            return undefined;
-        }
-
-        console.log(ranges);
-
-        return ranges;
-    },
-
-    slashShort: function (playerA, playerB) {
-        let areaRange = this.calculateAttackAreaRange(playerA, 1, 1);
-
-        this.attackShortRange(playerB, areaRange, this.slashShortDamage);
-
-    },
-
-    slashLong: function (playerA, playerB) {
-        let areaRange = this.calculateAttackAreaRange(playerA, 2, 1);
-
-        this.attackShortRange(playerB, areaRange, this.slashLongDamage);
-
-    },
-
-    slashWide: function (playerA, playerB) {
-        let areaRange = this.calculateAttackAreaRange(playerA, 1, 2);
-
-        this.attackShortRange(playerB, areaRange, this.slashWideDamage);
-
-    },
-
-
-}
+    this.attackShortRange(playerB, areaRange, this.slashWideDamage);
+  }
+};
 
 let delayDurations = {
-    movementDelay: 131.25,
-    chargeDelay: 1000,
-    specialDelay: 10000,
-}
+  movementDelay: 131.25,
+  chargeDelay: 1000,
+  specialDelay: 10000,
+
+  preGameDuration: 5000,
+  gameOverDuration: 5000,
+
+};
+
+let gameStates=["preGame","onGoing","paused","gameOver"]
 
 //3: Find the grid panels
-let Grid1Panels = $('#grid-1').children();
-let Grid2Panels = $('#grid-2').children();
+let Grid1Panels = $("#grid-1").children();
+let Grid2Panels = $("#grid-2").children();
 
 //4: Get gamepads
 const gamepads = navigator.getGamepads();
 
 //5: Store valuable information inside the player properties
 {
-    //Store a reference of each visual panel to its corresponding row and cell
-    for (let i = 0; i < 3; i++) {
-        let rowG1 = [];
-        let rowG2 = [];
+  //Store a reference of each visual panel to its corresponding row and cell
+  for (let i = 0; i < 3; i++) {
+    let rowG1 = [];
+    let rowG2 = [];
 
-        for (let j = 0; j < 3; j++) {
-            rowG1.push(Grid1Panels[(3 * i) + j]);
-            rowG2.push(Grid2Panels[(3 * i) + j])
-        }
-        player1.grid.push(rowG1);
-        player2.grid.push(rowG2);
+    for (let j = 0; j < 3; j++) {
+      rowG1.push(Grid1Panels[3 * i + j]);
+      rowG2.push(Grid2Panels[3 * i + j]);
     }
+    player1.grid.push(rowG1);
+    player2.grid.push(rowG2);
+  }
 
-    //Store the grid IDs in players
-    player1.gridId = "grid-1";
-    player2.gridId = "grid-2";
+  //Store the grid IDs in players
+  player1.gridId = "grid-1";
+  player2.gridId = "grid-2";
 
-    //5: Show player health in the text content (change this later)
-    player1.element.text(player1.HP)
-    player2.element.text(player2.HP)
+  //5: Show player health in the text content (change this later)
+  player1.element.html('<img class="pl" src="../Images/blob.png" />');
+  //   player2.element.text(player2.HP);
+  player2.element.html('<img class="pl" src="../Images/blob.png" />');
+
+  //Set up the health UI
+  player1.healthUI.attr("max",player1.HP)
+  player2.healthUI.attr("max",player2.HP)
+
+  //Set up the special UI
+  player1.specialUI.attr("max",delayDurations.specialDelay)
+  player1.specialUI.attr("value",0)
+  player2.specialUI.attr("max",delayDurations.specialDelay)
+  player2.specialUI.attr("value",0)
 }
 
-
-
 // Get the state of all gamepads
-window.addEventListener("gamepadconnected", function (e) {
-    console.log("Gamepad connected at index %d: %s. %d buttons, %d axes.",
-        e.gamepad.index, e.gamepad.id,
-        e.gamepad.buttons.length, e.gamepad.axes.length);
+window.addEventListener("gamepadconnected", function(e) {
+  console.log(
+    "Gamepad connected at index %d: %s. %d buttons, %d axes.",
+    e.gamepad.index,
+    e.gamepad.id,
+    e.gamepad.buttons.length,
+    e.gamepad.axes.length
+  );
 });
 
-window.addEventListener("gamepaddisconnected", function (e) {
-    var gp = navigator.getGamepads()[e.gamepad.index];
-    console.log("Gamepad disconnected at index %d: %s. %d buttons, %d axes.",
-        gp.index, gp.id,
-        gp.buttons.length, gp.axes.length);
+window.addEventListener("gamepaddisconnected", function(e) {
+  var gp = navigator.getGamepads()[e.gamepad.index];
+  console.log(
+    "Gamepad disconnected at index %d: %s. %d buttons, %d axes.",
+    gp.index,
+    gp.id,
+    gp.buttons.length,
+    gp.axes.length
+  );
 });
 
 var oldTimestamp = new Date().getTime();
@@ -377,169 +393,166 @@ let currentTime = 0;
 let timeDifferential = 0;
 
 function gameLoop() {
+  //1: Get the game pads
+  const gamepads = navigator.getGamepads();
 
-    //1: Get the game pads
-    const gamepads = navigator.getGamepads();
+  //2: Calculate time differential
+  currentTime = new Date().getTime();
 
-    //2: Calculate time differential
-    currentTime = new Date().getTime();
+  timeDifferential = currentTime - oldTimestamp;
 
-    timeDifferential = ((currentTime) - oldTimestamp);
+  oldTimestamp = currentTime;
 
-    oldTimestamp = currentTime;
-
-
-
-    //3: Handle player controls
-    {
-        if (player1.isAlive() && gamepads[0]) {
-
-            playerControls(gamepads, 0, timeDifferential, player1, player2);
-
-        }
-
-        if (player2.isAlive() && gamepads[1]) {
-            playerControls(gamepads, 1, timeDifferential, player2, player1);
-
-        }
+  //3: Handle player controls
+  if (gamepads.length==2){
+    if (player1.isAlive() && gamepads[0]) {
+      playerControls(gamepads, 0, timeDifferential, player1, player2);
     }
 
-    //console.log("Time differential: " + timeDifferential)
+    if (player2.isAlive() && gamepads[1]) {
+      playerControls(gamepads, 1, timeDifferential, player2, player1);
+    }
+  }
 
-    //4: Go to the next animation frame
-    window.requestAnimationFrame(gameLoop)
+  //console.log("Time differential: " + timeDifferential)
+
+  //4: Go to the next animation frame
+  window.requestAnimationFrame(gameLoop);
 }
 
-playerControls = function (gamepads, gamePadNum, timeDifferential, playerA, playerB) {
-    let anyBtnPressed = false;
-    let anyMovementBtnsPressed = false;
+playerControls = function(
+  gamepads,
+  gamePadNum,
+  timeDifferential,
+  playerA,
+  playerB
+) {
+  let anyBtnPressed = false;
+  let anyMovementBtnsPressed = false;
 
-    let BBtn = gamepads[gamePadNum].buttons[1].pressed;
-    let XBtn = gamepads[gamePadNum].buttons[2].pressed;
-    let upBtn = gamepads[gamePadNum].buttons[12].pressed;
-    let downBtn = gamepads[gamePadNum].buttons[13].pressed;
-    let leftBtn = gamepads[gamePadNum].buttons[14].pressed;
-    let rightBtn = gamepads[gamePadNum].buttons[15].pressed;
+  let BBtn = gamepads[gamePadNum].buttons[1].pressed;
+  let XBtn = gamepads[gamePadNum].buttons[2].pressed;
+  let upBtn = gamepads[gamePadNum].buttons[12].pressed;
+  let downBtn = gamepads[gamePadNum].buttons[13].pressed;
+  let leftBtn = gamepads[gamePadNum].buttons[14].pressed;
+  let rightBtn = gamepads[gamePadNum].buttons[15].pressed;
 
-    anyMovementBtnsPressed = upBtn || downBtn || leftBtn || rightBtn;
+  anyMovementBtnsPressed = upBtn || downBtn || leftBtn || rightBtn;
 
+  let isCharging =
+    XBtn &&
+    0 <= playerA.chargeTimer &&
+    playerA.chargeTimer < delayDurations.chargeDelay;
 
-    let isCharging = XBtn && (0 <= playerA.chargeTimer && playerA.chargeTimer < delayDurations.chargeDelay);
+  let shouldReleaseChargeShot =
+    !XBtn && playerA.chargeTimer >= delayDurations.chargeDelay;
 
-    let shouldReleaseChargeShot = !XBtn && playerA.chargeTimer >= delayDurations.chargeDelay;
+  let isFullyCharged =
+    XBtn && playerA.chargeTimer >= delayDurations.chargeDelay;
+  let shouldReleaseSmallShort =
+    !XBtn &&
+    0 < playerA.chargeTimer &&
+    playerA.chargeTimer < delayDurations.chargeDelay;
 
-    let isFullyCharged = XBtn && (playerA.chargeTimer >= delayDurations.chargeDelay);
-    let shouldReleaseSmallShort = !XBtn && (0 < playerA.chargeTimer && playerA.chargeTimer < delayDurations.chargeDelay)
+  let isSpecialFilling =
+    0 <= playerA.specialTimer &&
+    playerA.specialTimer < delayDurations.specialDelay;
+  let isSpecialFull = playerA.specialTimer >= delayDurations.specialDelay;
+  // let shouldExecuteSpecial=BBtn && isSpecialFull;
 
-    let isSpecialFilling = 0 <= playerA.specialTimer && playerA.specialTimer < delayDurations.specialDelay;
-    let isSpecialFull = playerA.specialTimer >= delayDurations.specialDelay;
-    // let shouldExecuteSpecial=BBtn && isSpecialFull;
+  //Attacks
+  if (isSpecialFilling) {
+    playerA.increaseSpecialTimer(timeDifferential);
+    // playerA.element.css("background-color", "#FF7F7F");
+  } else if (isSpecialFull) {
+    // playerA.element.css("background-color", "crimson");
 
+    if (playerA.chosenSpecialAttack == 0) {
+      playerA.chosenSpecialAttack = Math.floor(Math.random() * 3 + 1);
 
-    //Attacks
-    if (isSpecialFilling) {
-        playerA.increaseSpecialTimer(timeDifferential);
-        playerA.element.css("background-color","#FF7F7F");
-        
-    } else if (isSpecialFull){
-        playerA.element.css("background-color","crimson");
+      let specialAttackName = "";
 
-        if (playerA.chosenSpecialAttack==0){
+      switch (playerA.chosenSpecialAttack) {
+        case 1:
+          specialAttackName = "Short Slash";
+          break;
 
-            playerA.chosenSpecialAttack=Math.floor((Math.random() * 3) + 1);
+        case 2:
+          specialAttackName = "Long Slash";
+          break;
 
-            let specialAttackName="";
+        case 3:
+          specialAttackName = "Wide Slash";
+          break;
+      }
 
-            switch (playerA.chosenSpecialAttack) {
-                case 1:
-                    specialAttackName="Short Slash";
-                    break;
+      console.log(
+        playerA.element.attr("id") +
+          " Chosen Special Attack: " +
+          specialAttackName
+      );
+    }
+  }
 
-                case 2:
-                    specialAttackName="Long Slash";
-                    break;
+  if (BBtn && isSpecialFull) {
+    // //Choose a random attack here
 
-                case 3:
-                    specialAttackName="Wide Slash";
-                    break;
-            }
-            
-            console.log(playerA.element.attr("id")+" Chosen Special Attack: "+specialAttackName);
-            
-        }
+    switch (playerA.chosenSpecialAttack) {
+      case 1:
+        attack.slashShort(playerA, playerB);
+        break;
+
+      case 2:
+        attack.slashLong(playerA, playerB);
+        break;
+
+      case 3:
+        attack.slashWide(playerA, playerB);
+        break;
     }
 
-    if (BBtn && isSpecialFull) {
-        
-            // //Choose a random attack here
+    playerA.chosenSpecialAttack = 0;
 
-            switch (playerA.chosenSpecialAttack) {
-                case 1:
-                    attack.slashShort(playerA, playerB);
-                    break;
+    playerA.resetSpecialTimer();
+  } else {
+    if (isCharging) {
+      playerA.increaseChargeTimer(timeDifferential);
 
-                case 2:
-                    attack.slashLong(playerA, playerB);
-                    break;
+    //   playerA.element.css("background-color", "cyan");
+    } else if (shouldReleaseSmallShort) {
+      //Release small shot
+      attack.shootSmall(playerA, playerB);
 
-                case 3:
-                    attack.slashWide(playerA, playerB);
-                    break;
-            }
+    //   playerA.element.css("background-color", "white");
+      playerA.resetChargeTimer();
+    } else if (isFullyCharged) {
+    //   playerA.element.css("background-color", "purple");
+    } else if (shouldReleaseChargeShot) {
+      attack.shootCharge(playerA, playerB);
 
-            playerA.chosenSpecialAttack=0;
-
-
-        playerA.resetSpecialTimer();
-    } else {
-        if (isCharging) {
-            playerA.increaseChargeTimer(timeDifferential);
-
-            playerA.element.css("background-color", "cyan");
-
-        } else if (shouldReleaseSmallShort) {
-            //Release small shot
-            attack.shootSmall(playerA, playerB);
-
-            playerA.element.css("background-color", "white");
-            playerA.resetChargeTimer();
-
-        } else if (isFullyCharged) {
-            playerA.element.css("background-color", "purple");
-        }
-        else if (shouldReleaseChargeShot) {
-            attack.shootCharge(playerA, playerB);
-
-            playerA.element.css("background-color", "white");
-            playerA.resetChargeTimer();
-        }
+    //   playerA.element.css("background-color", "white");
+      playerA.resetChargeTimer();
     }
+  }
 
-
-
-    //Movement
-    if (playerA.movementTimer >= delayDurations.movementDelay) {
-        if (upBtn) {
-            movement.moveUp(playerA);
-        } else if (downBtn) {
-            movement.moveDown(playerA);
-        } else if (leftBtn) {
-            movement.moveLeft(playerA);
-        } else if (rightBtn) {
-            movement.moveRight(playerA);
-        }
-
-
-
+  //Movement
+  if (playerA.movementTimer >= delayDurations.movementDelay) {
+    if (upBtn) {
+      movement.moveUp(playerA);
+    } else if (downBtn) {
+      movement.moveDown(playerA);
+    } else if (leftBtn) {
+      movement.moveLeft(playerA);
+    } else if (rightBtn) {
+      movement.moveRight(playerA);
     }
+  }
 
+  if (anyMovementBtnsPressed) {
+    playerA.resetMovementTimer();
+  } else {
+    playerA.increaseMovementTimer(timeDifferential);
+  }
+};
 
-    if (anyMovementBtnsPressed) {
-        playerA.resetMovementTimer();
-
-    } else {
-        playerA.increaseMovementTimer(timeDifferential);
-    }
-}
-
-window.requestAnimationFrame(gameLoop)
+window.requestAnimationFrame(gameLoop);
