@@ -10,12 +10,50 @@ body{
 
     background-color: green;
 
-    height:100%;
-    width: 100%;
+    /* height:100%;
+    width: 100%; */
 
 }
 
-.Battlefield{
+.screen{
+    width: 100vw;
+    height: 100vh;
+    background-color: black !important;
+}
+
+
+.HUD{
+    display: flex;
+    justify-content: space-between;
+}
+
+.HUD > div{
+    display: grid;
+    
+    border: black solid 3px;
+    width: 40.48%;
+    height: 100%;
+}
+
+
+.CharacterIcon{
+    grid-row: 1/3;
+}
+
+.HealthBar{
+    grid-column: 2/4;
+}
+
+
+#HUD-1{
+    grid-template-columns: 30% 70%;
+}
+
+#HUD-2{
+    grid-template-columns: 70% 30%;
+}
+
+.Dreamfield{
     display: flex;
     justify-content: center;
     column-gap: 1.5px;
@@ -68,5 +106,14 @@ body{
     width: 100%;
     height: 100%;
     font-size: 50%;
+
+/*     
+    position: absolute;
+    width: 50px;
+    height: 50;
+    left: calc(50% - 254px/2);
+    top: calc(50% - 249px/2 - 83.86px);
+
+    background-image: url(../Images/blob.png); */
 }
 
