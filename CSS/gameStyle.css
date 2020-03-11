@@ -38,7 +38,7 @@ body {
     position: relative;
     display: grid;
 
-    border: black solid 1px;
+    /* border: rgb(23, 0, 151) groove 3px; */
     width: 40.83333%;
     height: 80%;
 }
@@ -47,6 +47,7 @@ body {
     grid-column: 2/4;
     height:135%;
     width: 100%;
+    
     /* background-color:greenyellow; */
     /* padding-bottom: 20px; */
     
@@ -69,17 +70,19 @@ body {
     top:15%;
     height:85%;
     width: 80%;
+    
     /* border: solid 1px red; */
 }
 
 .special > *{
     height:95%;
-
+  
 }
 
 .SpecialBar{
     width: 85%;
     height:50%;
+    border: rgb(23, 0, 151) groove 3px;
 }
 
 .SpecialIcon{

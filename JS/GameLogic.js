@@ -33,7 +33,10 @@ let player1 = {
         //Update health visually
         this.healthUI.attr("value", this.HP)
 
-        this.changeFrame(blobImages.damageImg);
+        if (damage>attack.smallShotDamage){
+            this.changeFrame(blobImages.damageImg);
+        }
+        
     },
 
     //Special attack
@@ -52,12 +55,29 @@ let player1 = {
 
     //Charge
     chargeTimer: 0,
+    characterIcon: $("#PHUD-1 .CharacterIcon"),
+
     increaseChargeTimer: function (timeDifferential) {
         this.chargeTimer += timeDifferential;
     },
 
     resetChargeTimer: function () {
         this.chargeTimer = 0;
+    },
+
+    showEmptyChargeColor: function(color){
+        this.changeCharacterIconColor("gray");
+    },
+    showChargingColor: function(color){
+        this.changeCharacterIconColor("purple");
+    },
+
+    showChargedColor: function(color){
+        this.changeCharacterIconColor("rgb(204, 0, 204)"); 
+    },
+
+    changeCharacterIconColor: function(color){
+        this.characterIcon.css("background-color",color);
     },
 
     //Special
@@ -147,7 +167,9 @@ let player2 = {
         //Update health visually
         this.healthUI.attr("value", this.HP)
 
-        this.changeFrame(blobImages.damageImg);
+        if (damage>attack.smallShotDamage){
+            this.changeFrame(blobImages.damageImg);
+        }
     },
 
     //Special attack
@@ -166,12 +188,29 @@ let player2 = {
 
     //Charge
     chargeTimer: 0,
+    characterIcon: $("#PHUD-2 .CharacterIcon"),
+
     increaseChargeTimer: function (timeDifferential) {
         this.chargeTimer += timeDifferential;
     },
 
     resetChargeTimer: function () {
         this.chargeTimer = 0;
+    },
+
+    showEmptyChargeColor: function(color){
+        this.changeCharacterIconColor("gray");
+    },
+    showChargingColor: function(color){
+        this.changeCharacterIconColor("purple");
+    },
+
+    showChargedColor: function(color){
+        this.changeCharacterIconColor("rgb(204, 0, 204)"); 
+    },
+
+    changeCharacterIconColor: function(color){
+        this.characterIcon.css("background-color",color);
     },
 
     //Special
@@ -299,7 +338,7 @@ let movement = {
 let attack = {
     //Long range
     smallShotDamage: 1,
-    chargeShotDamage: 10,
+    chargeShotDamage: 50,
 
     attackLongRanged: function (affectedPlayer, playerARow, damage) {
         //This condition should be changed if more than one players are on the same grid.
@@ -313,10 +352,15 @@ let attack = {
     shootSmall: function (playerA, playerB) {
         playerA.changeFrame(blobImages.shotImg);
 
+        playerA.showEmptyChargeColor();
+
         this.attackLongRanged(playerB, playerA.row, this.smallShotDamage);
     },
     shootCharge: function (playerA, playerB) {
         playerA.changeFrame(blobImages.shotImg);
+
+        playerA.showEmptyChargeColor();
+
         this.attackLongRanged(playerB, playerA.row, this.chargeShotDamage);
     },
 
@@ -517,6 +561,28 @@ const gamepads = navigator.getGamepads();
     player2.changeSpecialIcon(speciaIconImages.unknownImg);
 }
 
+//6: Get the state of all gamepads
+window.addEventListener("gamepadconnected", function (e) {
+    console.log(
+        "Gamepad connected at index %d: %s. %d buttons, %d axes.",
+        e.gamepad.index,
+        e.gamepad.id,
+        e.gamepad.buttons.length,
+        e.gamepad.axes.length
+    );
+});
+
+window.addEventListener("gamepaddisconnected", function (e) {
+    var gp = navigator.getGamepads()[e.gamepad.index];
+    console.log(
+        "Gamepad disconnected at index %d: %s. %d buttons, %d axes.",
+        gp.index,
+        gp.id,
+        gp.buttons.length,
+        gp.axes.length
+    );
+});
+
 
 
 var oldTimestamp = new Date().getTime();
@@ -527,6 +593,7 @@ alert("Dream Field");
 alert("This game requires two controllers.")
 alert("Controls:\n\tNormal shot: press X\n\tCharge shot: hold X for one second, then release.\n\tB: Special weapon (can only be used when the bottom gauge is full).\n\tMovement: D-pad.");
 alert("The game is paused!\n while you're hovered on the page, mash the buttons on both controllers, then press start on one of them to start the game.");
+
 gameStates.changeToPaused();
 
 function gameLoop() {
@@ -646,9 +713,9 @@ playerControls = function (
     //Attacks
     if (isSpecialFilling) {
         playerA.increaseSpecialTimer(timeDifferential);
-        playerA.imgElm.css("color", "#FF7F7F");
+        // playerA.imgElm.css("color", "#FF7F7F");
     } else if (isSpecialFull) {
-        playerA.imgElm.css("color", "crimson");
+        // playerA.imgElm.css("color", "crimson");
 
         if (playerA.chosenSpecialAttack == 0) {
             playerA.chosenSpecialAttack = Math.floor(Math.random() * 3 + 1);
@@ -705,19 +772,20 @@ playerControls = function (
         if (isCharging) {
             playerA.increaseChargeTimer(timeDifferential);
 
-            //   playerA.element.css("background-color", "cyan");
+            playerA.showChargingColor();
+
         } else if (shouldReleaseSmallShort) {
             //Release small shot
             attack.shootSmall(playerA, playerB);
 
-            //   playerA.element.css("background-color", "white");
             playerA.resetChargeTimer();
         } else if (isFullyCharged) {
-            //   playerA.element.css("background-color", "purple");
+            playerA.showChargedColor();
+
         } else if (shouldReleaseChargeShot) {
             attack.shootCharge(playerA, playerB);
 
-            //   playerA.element.css("background-color", "white");
+            playerA.showEmptyChargeColor();
             playerA.resetChargeTimer();
         }
     }
@@ -759,26 +827,5 @@ pauseButtonClicked = function (gamepads) {
 }
 
 
-// Get the state of all gamepads
-window.addEventListener("gamepadconnected", function (e) {
-    console.log(
-        "Gamepad connected at index %d: %s. %d buttons, %d axes.",
-        e.gamepad.index,
-        e.gamepad.id,
-        e.gamepad.buttons.length,
-        e.gamepad.axes.length
-    );
-});
-
-window.addEventListener("gamepaddisconnected", function (e) {
-    var gp = navigator.getGamepads()[e.gamepad.index];
-    console.log(
-        "Gamepad disconnected at index %d: %s. %d buttons, %d axes.",
-        gp.index,
-        gp.id,
-        gp.buttons.length,
-        gp.axes.length
-    );
-});
 
 window.requestAnimationFrame(gameLoop);
