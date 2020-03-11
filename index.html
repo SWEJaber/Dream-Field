@@ -3,59 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSS/gameStyle.css" />
-    <title>Untitled</title>
+    <link rel="stylesheet" href="CSS/gameStyle.css" />
+    <title>Dream Field</title>
   </head>
   <body>
     <!-- <div class="screen" id=></div> -->
-
-    <style>
-      /* .HUD {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20%;
-        width: 100%;
-      }
-
-      .HUD > div {
-        display: grid;
-
-        border: black solid 1px;
-        width: 47%;
-        height: 100%;
-      }
-
-      .CharacterIcon {
-        grid-row: 1/3;
-        width: 100%;
-        background-color: gray;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-image: url("../../Images/Blob Icon.png");
-      }
-
-      .HealthBar {
-        grid-column: 2/4;
-      }
-
-      #HUD-1 {
-        grid-template-columns: 1fr 2fr;
-      }
-
-      #HUD-2 {
-        grid-template-columns: 2fr 1fr;
-      } */
-    </style>
 
     <div class="screen" id="game-play">
       <div class="HUD">
         <div class="PlayerHUD" id="PHUD-1">
           <div class="CharacterIcon">
           </div>
-          <progress class="HealthBar" max="" value=""></progress>
+
+          <progress class="HealthBar" max="1000" value="1000"></progress>
+          
+          
           <div class="special" style="display: flex;">
-            <div class="SpecialIcon"></div>
+            <div class="SpecialIcon">
+                <img class="iconImg" src="/Images/question_mark.png"/>
+            </div>
             <progress class="SpecialBar"></progress>
           </div>
         </div>
@@ -63,9 +29,14 @@
         <div class="PlayerHUD" id="PHUD-2">
             <div class="CharacterIcon">
             </div>
-            <progress class="HealthBar" max="" value=""></progress>
+  
+            <progress class="HealthBar" max="1000" value="1000"></progress>
+            
+            
             <div class="special" style="display: flex;">
-              <div class="SpecialIcon"></div>
+              <div class="SpecialIcon">
+                  <img class="iconImg" src="/Images/question_mark.png"/>
+              </div>
               <progress class="SpecialBar"></progress>
             </div>
           </div>
@@ -96,7 +67,7 @@
           <div class="panel" id="5">
             <div class="player" id="player2">
               <!-- <div> -->
-              <img class="pl" src="../Images/blob.png" />
+              <img class="pl" src="/Images/blob.png" />
               <!-- </div> -->
             </div>
           </div>
@@ -109,7 +80,7 @@
       </div>
     </div>
 
-    <script src="../JS/jQuery.js"></script>
-    <script src="../JS/GameLogic.js"></script>
+    <script src="/JS/jQuery.js"></script>
+    <script src="/JS/GameLogic.js"></script>
   </body>
 </html>
