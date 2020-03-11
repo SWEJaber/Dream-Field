@@ -508,8 +508,13 @@ const gamepads = navigator.getGamepads();
     //Set up the special UI
     player1.specialUI.attr("max", delayDurations.specialDelay)
     player1.specialUI.attr("value", 0)
+
     player2.specialUI.attr("max", delayDurations.specialDelay)
     player2.specialUI.attr("value", 0)
+
+    //Set up the special weapon icon
+    player1.changeSpecialIcon(speciaIconImages.unknownImg);
+    player2.changeSpecialIcon(speciaIconImages.unknownImg);
 }
 
 
