@@ -2,8 +2,7 @@
 
 Under construction... In the meantime, keep Blob happy
 
-![Happy Blob](Images/blob_win.png) { width=50% }
-
+![Happy Blob](Images/blob_win.png) 
 or he'll melt!
 
-![Sad Blob](Images/blob_lose.png){ width=50% }
+![Sad Blob](Images/blob_lose.png)
