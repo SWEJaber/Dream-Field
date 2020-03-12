@@ -70,7 +70,7 @@ If the above steps don't work, refresh the page, and try again.
 
 ![Figma wireframe](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/Wireframes/Fleshed%20out%20wireframe.PNG)
 
-# 5. Future
+# 5. Future Work
 I'd like to add the following to my game:
 * Music and sound effects.
 * Screens: Start, controls, game over, credits.
