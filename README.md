@@ -80,6 +80,7 @@ I'd like to add the following to my game:
 
 # 6. Bugs and Errors
 * Character image overlaps with other objects in the environment.
+* Transition between character frames is delayed sometimes.
 * Gamepads sometimes don't connect.
 
 # 7. Development Team
