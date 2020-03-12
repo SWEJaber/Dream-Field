@@ -63,7 +63,7 @@ If the above steps don't work, refresh the page, and try again.
 ### Short Range (Special)
 ## Character Artwork
 ![Blob Sketch](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/Camera/Blob%20Sketches.jpg)
-![Happy Blob](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/blob_win.png)
+![Blob Frames](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/blob_frames.png)
 
 ## Wireframes
 ![Paper wireframe](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/Wireframes/Gameplay%20Wireframe.jpg)
