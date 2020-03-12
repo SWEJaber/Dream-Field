@@ -61,10 +61,24 @@ If the above steps don't work, refresh the page, and try again.
 ## Facilitating Attacks
 ### Long Range
 ### Short Range (Special)
+## Character Artwork
+![Blob Sketch](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/Camera/Blob%20Sketches.jpg)
+![Happy Blob](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/blob_win.png)
+
 ## Wireframes
+![Paper wireframe](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/Wireframes/Gameplay%20Wireframe.jpg)
+
+![Figma wireframe](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/Wireframes/Fleshed%20out%20wireframe.PNG)
 
 # 5. Future
+I'd like to add the following to my game:
+* Music and sound effects.
+* Screens: Start, controls, game over, credits.
+* Changing environments (diverse background images and panels).
+* Enemy AI.
 
 # 6. Bugs and Errors
+* Character image overlaps with other objects in the environment.
+* Gamepads sometimes don't connect.
 
 # 7. Credit
