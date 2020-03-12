@@ -86,4 +86,4 @@ I'd like to add the following to my game:
 
 # 7. Development Team
 * Jaber Alsalamah - Programmer
-* Ashraqat Alsalamah - Artwork (![Instagram page](https://www.instagram.com/ninja_jumipy2011/))
+* Ashraqat Alsalamah - Artist (![Instagram page](https://www.instagram.com/ninja_jumipy2011/))
