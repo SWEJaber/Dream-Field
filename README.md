@@ -76,6 +76,7 @@ I'd like to add the following to my game:
 * Screens: Start, controls, game over, credits.
 * Changing environments (diverse background images and panels).
 * Enemy AI.
+* More characters.
 
 # 6. Bugs and Errors
 * Character image overlaps with other objects in the environment.
