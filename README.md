@@ -81,4 +81,6 @@ I'd like to add the following to my game:
 * Character image overlaps with other objects in the environment.
 * Gamepads sometimes don't connect.
 
-# 7. Credit
+# 7. Development Team
+* Jaber Alsalamah - Programmer
+* Ashraqat Alsalamah - Artwork (![Instagram page](https://www.instagram.com/ninja_jumipy2011/))
