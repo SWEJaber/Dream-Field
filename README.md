@@ -5,7 +5,7 @@ Under construction, please be patient...
 # 1. Introduction
 Dream Field is grid-based two player game, where the goal is to defeat the other player through battle.
 
-
+![Click here to play](https://pages.git.generalassemb.ly/JaAlSaDev/Dream-Field/)
 
 ![Screenshot](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/Wide%20Attack.png)
 
@@ -41,21 +41,27 @@ The game requires two gamepads to work. Before starting the game, do the followi
 1. Hover on the page.
 2. Connect two controllers.
 3. Mash the buttons on both controllers.
-4. Press start for a bit.
+4. Press and hold the start button for a bit.
 
-If the bottom
+If the bottom bars starts to fill, that means the game started.
+If the above steps don't work, refresh the page, and try again.
+
+![PlayerHUD](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/PlayerHUD.PNG)
 
 ## Controls
-
-
-## How to Play
+| **Action**  | **Instruction**  |
+|---|---|
+|   **Normal Shot** | Press X  |
+|   **Charge Shot**| Press and Hold X until the character icon turns light purple|
+|   **Special Attack** | Press B after the special bar is full (bottom bar)  |
+|   **Movement** | Press the D-pad buttons in the desired direction |
 
 # 4. Development (Screenshots)
 ## Facilitating Movement
 ## Facilitating Attacks
 ### Long Range
 ### Short Range (Special)
-### Wireframes
+## Wireframes
 
 # 5. Future
 
