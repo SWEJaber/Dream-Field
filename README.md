@@ -83,6 +83,7 @@ I'd like to add the following to my game:
 * Character image overlaps with other objects in the environment.
 * Transition between character frames is delayed sometimes.
 * Gamepads sometimes don't connect.
+* Edge of the panels is clipped.
 
 # 7. Development Team
 * Jaber Alsalamah - Programmer
