@@ -5,7 +5,7 @@ Under construction, please be patient...
 # 1. Introduction
 Dream Field is grid-based two player game, where the goal is to defeat the other player through battle.
 
-
+![Click here to play](https://pages.git.generalassemb.ly/JaAlSaDev/Dream-Field/)
 
 ![Screenshot](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/Wide%20Attack.png)
 
