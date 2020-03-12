@@ -74,7 +74,7 @@ If the above steps don't work, refresh the page, and try again.
 I'd like to add the following to my game:
 * Music and sound effects.
 * Screens: Start, controls, game over, credits.
-* Changing environments (diverse background images and panels).
+* Environments changing in sync with music (diverse background images and panels).
 * Enemy AI.
 * More characters.
 * Code refactoring.
