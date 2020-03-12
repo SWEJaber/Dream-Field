@@ -77,6 +77,7 @@ I'd like to add the following to my game:
 * Changing environments (diverse background images and panels).
 * Enemy AI.
 * More characters.
+* Code refactoring.
 
 # 6. Bugs and Errors
 * Character image overlaps with other objects in the environment.
