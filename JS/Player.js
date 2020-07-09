@@ -200,8 +200,15 @@ export default class Player {
             this.characterIcon = {
                 icon: $(`#PHUD-${ID} .CharacterIcon`),
 
+                setup: function() {
+                    this.icon.css(
+                        "background-image",
+                        `url("${require("../Images/Blob Icon.png")}")`
+                    );
+                },
                 changeCharacterIconColor: function(color) {
                     this.icon.css("background-color", color);
+                    this.icon.css;
                 },
 
                 showEmptyChargeColor: function() {
@@ -217,7 +224,7 @@ export default class Player {
             };
 
             this.specialIcon = {
-                icon: $(`#PHUD-${ID} .SpecialIcon`),
+                icon: $(`#PHUD-${ID} .SpecialIcon`).children()[0],
                 speciaIcons: {
                     unknownImg: require("../Images/question_mark.png"),
                     shortRangeImg: require("../Images/short_range.png"),
@@ -225,8 +232,7 @@ export default class Player {
                     longRangeImg: require("../Images/long_range.png"),
                 },
                 change: function(newImgSrc) {
-                    // this.icon.src = newImgSrc;
-                    this.icon.html('<img class="iconImg" src=' + newImgSrc + " />");
+                    this.icon.src = newImgSrc;
                 },
 
                 changeToUnknown: function() {
@@ -248,6 +254,7 @@ export default class Player {
 
     start() {
         this.health.setup();
+        this.characterIcon.setup();
         this.specialBar.setup(this.specialTimer.delay);
 
         this.specialIcon.changeToUnknown();

@@ -153,12 +153,12 @@ body {
 }
 
 #grid-1>.panel {
-    background-image: url("../Images/tile_red.jpg");
+    background-image: url("/tile_red.5a563292.jpg");
     transform: scaleX(-1);
 }
 
 #grid-2>.panel {
-    background-image: url("../Images/tile_blue.jpg");
+    background-image: url("/tile_blue.41ad8d7b.jpg");
 }
 
 .panel {
@@ -193,3 +193,5 @@ body {
     top: -550%;
     /* z-index: 9999; */
 }
+
+/*# sourceMappingURL=/gameStyle.97fa68e0.css.map */
