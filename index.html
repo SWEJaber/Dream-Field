@@ -4,18 +4,38 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./CSS/gameStyle.css" />
+    <link rel="stylesheet" href="./CSS/_style.css" />
+
     <title>Dream Field</title>
+
 </head>
 
 <body>
-    <!-- <div class="screen" id=></div> -->
+    <audio crossorigin="anonymous"></audio>
+    <div id="overlay">
+        <div>
+        </div>
+    </div>
 
-    <div class="screen" id="game-play">
-        <div id="overlay">
-            <div id="text">Please connect two controllers.</div>
+    <div class="screen" id="title">
+        <div class="textSection">
+            <p class="title">Dream Field</p>
+            <p class="startButton">Press Start</p>
+        </div>
+    </div>
+
+
+    <div class="screen" id="instructions">
+        <div class="textSection">
+            <img src="./Images/Controller_Layout.png" id="controller">
+            <p class="startButton">Press Start to Continue</p>
         </div>
 
+    </div>
+
+
+
+    <div class="screen" id="game-play">
         <div class="HUD">
             <div class="PlayerHUD" id="PHUD-1">
                 <div class="CharacterIcon"></div>
@@ -86,7 +106,24 @@
         </div>
     </div>
 
-    <script src="./JS/jQuery.js"></script>
+    <div class="screen" id="result">
+        <div class="textSection">
+            <p class="title" id="gameover">Game Over</p>
+            <p id="winner">Player <span id="winnerNum">1</span> wins!</p>
+        </div>
+    </div>
+
+    <div class="screen" id="credits">
+        <div class="textSection">
+            <p class="title" id="credits">Credits</p>
+            <p class="member"><span class="role">Programmer</span> <span class="name">JaAlSaDev</span></p>
+            <p class="member"><span class="role">Artist</span> <span class="name">Ninja-jumipy2011
+                </span></p>
+
+        </div>
+    </div>
+
+
     <script src="./Index.js"></script>
 </body>
 

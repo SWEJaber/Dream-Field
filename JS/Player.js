@@ -1,4 +1,4 @@
-import Timer from "./Timer.js";
+import Timer from "./Timer";
 
 export default class Player {
     constructor(ID, grid) {
@@ -208,7 +208,7 @@ export default class Player {
                 },
                 changeCharacterIconColor: function(color) {
                     this.icon.css("background-color", color);
-                    this.icon.css;
+
                 },
 
                 showEmptyChargeColor: function() {
@@ -255,7 +255,7 @@ export default class Player {
     start() {
         this.health.setup();
         this.characterIcon.setup();
-        this.specialBar.setup(this.specialTimer.delay);
+        this.specialBar.setup(this.specialTimer.duration);
 
         this.specialIcon.changeToUnknown();
     }
@@ -268,11 +268,11 @@ export default class Player {
         this.handleMovement(inputHandler, timeDifferential);
 
         this.handleAnimation(timeDifferential);
-        this.specialBar.update(this.specialTimer.time);
+        this.specialBar.update(this.specialTimer.timePassed);
     }
 
     handleMovement(inputHandler, timeDifferential) {
-        if (this.movementTimer.isCharged()) {
+        if (this.movementTimer.isDone()) {
             if (inputHandler.isUpPressed()) {
                 this.moveUp();
             } else if (inputHandler.isDownPressed()) {
@@ -293,17 +293,17 @@ export default class Player {
 
     handleAttack(inputHandler, timeDifferential, playerB) {
         let isCharging =
-            inputHandler.isXPressed() && this.chargeTimer.isChargingZeroIncluded();
+            inputHandler.isXPressed() && this.chargeTimer.isInProgressZeroIncluded();
 
-        let shouldReleaseSmallShot = !inputHandler.isXPressed() && this.chargeTimer.isCharging();
-        let shouldReleaseChargeShot = !inputHandler.isXPressed() && this.chargeTimer.isCharged();
+        let shouldReleaseSmallShot = !inputHandler.isXPressed() && this.chargeTimer.isInProgress();
+        let shouldReleaseChargeShot = !inputHandler.isXPressed() && this.chargeTimer.isDone();
 
         let isFullyCharged =
-            inputHandler.isXPressed() && this.chargeTimer.isCharged();
+            inputHandler.isXPressed() && this.chargeTimer.isDone();
 
-        let isSpecialFilling = this.specialTimer.isChargingZeroIncluded();
+        let isSpecialFilling = this.specialTimer.isInProgressZeroIncluded();
 
-        let isSpecialFull = this.specialTimer.isCharged();
+        let isSpecialFull = this.specialTimer.isDone();
 
         //Attacks
         {
@@ -384,7 +384,7 @@ export default class Player {
 
     handleAnimation(timeDifferential) {
         if (!this.frameHandler.isIdle()) {
-            if (this.frameHandler.timer.isChargingZeroIncluded()) {
+            if (this.frameHandler.timer.isInProgressZeroIncluded()) {
                 this.frameHandler.timer.increase(timeDifferential);
             } else {
                 // this.imgTimer.reset();

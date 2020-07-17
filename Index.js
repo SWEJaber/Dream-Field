@@ -1,13 +1,18 @@
-import jQuery from "./JS/jQuery.js";
+import jQuery from "./JS/jQuery";
 window.$ = window.jQuery = jQuery;
-import Game from "./JS/Game.js";
-import InputHandler from "./JS/InputHandler.js";
+import Game from "./JS/Game";
+import InputHandler from "./JS/InputHandler";
 
 let playerInputs = {};
-let overlay = $("#overlay");
 length = (obj) => {
     return Object.keys(obj).length;
 };
+let overlay = $("#overlay");
+let game = new Game(playerInputs);
+game.start();
+
+
+
 //Detect gamepad events (connect, disconnect)
 window.addEventListener("gamepadconnected", function(e) {
     var gamepad = e.gamepad;
@@ -44,6 +49,7 @@ window.addEventListener("gamepaddisconnected", function(e) {
         overlay.children()[0].innerText = `Gamepad ${gp.index} disconnected`;
 
         overlay.show();
+        game.state.changeToPaused();
     } else if (length(playerInputs) == 0) {
         overlay.children()[0].innerText = `Please connect two controllers`;
 
@@ -51,8 +57,7 @@ window.addEventListener("gamepaddisconnected", function(e) {
     }
 });
 
-let game = new Game(playerInputs);
-game.start();
+
 
 let previousTimestamp = 0;
 

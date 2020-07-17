@@ -1,0 +1,20 @@
+#credits {
+    margin-bottom: 5%;
+}
+
+.member {
+    display: flex;
+    /* border: blue solid 1px; */
+    font-size: 50px;
+    height: 28%;
+    /* text-align: left; */
+    justify-content: space-between;
+    padding-left: 1%;
+    /* padding-right: 5%; */
+}
+
+.member>span {
+    text-align: left;
+    /* border: blue solid 1px; */
+    width: 45%;
+}

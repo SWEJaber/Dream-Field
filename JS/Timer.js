@@ -1,30 +1,30 @@
 export default class Timer {
-    constructor(delay) {
-        this.time = 0;
-        this.delay = delay;
+    constructor(duration) {
+        this.timePassed = 0;
+        this.duration = duration;
     }
 
-    setDelay(delay) {
-        this.delay = delay;
+    setDuration(duration) {
+        this.duration = duration;
     }
 
     increase(timeDifferential) {
-        this.time += timeDifferential;
+        this.timePassed += timeDifferential;
     }
 
-    isChargingZeroIncluded() {
-        return 0 <= this.time && this.time < this.delay;
+    isInProgressZeroIncluded() {
+        return 0 <= this.timePassed && this.timePassed < this.duration;
     }
 
-    isCharging() {
-        return 0 < this.time && this.time < this.delay;
+    isInProgress() {
+        return 0 < this.timePassed && this.timePassed < this.duration;
     }
 
-    isCharged() {
-        return this.time >= this.delay;
+    isDone() {
+        return this.timePassed >= this.duration;
     }
 
     reset() {
-        this.time = 0;
+        this.timePassed = 0;
     }
 }

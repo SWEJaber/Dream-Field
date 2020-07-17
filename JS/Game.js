@@ -1,18 +1,78 @@
-import Grid from "./Grid.js";
-import Player from "./Player.js";
+import Grid from "./Grid";
+import Player from "./Player";
 
-import jQuery from "./jQuery.js";
+import jQuery from "./jQuery";
+import Timer from "./Timer";
 window.$ = window.jQuery = jQuery;
 
+let audioElement = $("audio")[0]
+audioElement.src = require("../Sound/ROCK_X6_00644.wav")
+
+const audioContext = new AudioContext();
+
+const track = audioContext.createMediaElementSource(audioElement);
+track.connect(audioContext.destination)
+
 export const GAMESTATES = {
-    PREGAME: 0,
-    ONGOING: 1,
-    PAUSED: 2,
-    GAMEOVER: 3,
+    TITLE: 0,
+    INSTRUCTIONS: 1,
+    GAMEPLAY: 2,
+    PAUSED: 3,
+    RESULTS: 4,
+    CREDITS: 5,
 };
 
-let gameOverScreenShown = false;
+
+let instructionsScreenShown = false;
+let resultsScreenShown = false;
+let creditsScreenShown = false;
+
 let overlay = $("#overlay");
+let titleScreen = $("#title")
+let instructionsScreen = $("#instructions")
+let gameplayScreen = $("#game-play")
+let resultScreen = $("#result")
+let creditsScreen = $("#credits")
+
+
+let winnerNumElem = $("#winnerNum")
+
+
+
+let startBtnObj = {
+    element: $(".startButton"),
+    normalSpeed: 1000,
+    fastSpeed: 100,
+    timer: new Timer(1000),
+    pressedStart: false,
+
+    flicker: function(timeDifferential) {
+
+        this.timer.increase(timeDifferential);
+
+        if (this.timer.isDone()) {
+            this.element.fadeOut(this.timer.duration / 2).fadeIn(this.timer.duration / 2)
+            this.timer.reset()
+        }
+
+    },
+    toggleFlickerSpeed: function() {
+        if (this.timer.duration === this.normalSpeed) {
+            this.timer.setDuration(this.fastSpeed)
+        } else {
+            this.timer.setDuration(this.normalSpeed)
+        }
+    },
+
+    reset: function(delay) {
+        setTimeout(() => {
+            this.pressedStart = false;
+            this.timer.setDuration(this.normalSpeed);
+        }, delay);
+
+    }
+}
+
 
 let delayDurations = {
     // Not used
@@ -23,30 +83,44 @@ let delayDurations = {
 export default class Game {
     constructor(playerInputs) {
         this.state = {
-            currentState: GAMESTATES.PAUSED,
+            currentState: GAMESTATES.TITLE,
+            previousState: GAMESTATES.TITLE,
 
-            changeToOnGoing: function() {
-                this.currentState = GAMESTATES.ONGOING;
+            changeState: function(newState) {
+                this.previousState = this.currentState;
+                this.currentState = newState;
+            },
+            changeToTitle: function() {
+                this.changeState(GAMESTATES.TITLE)
+
+            },
+
+            changeToInstructions: function() {
+                this.changeState(GAMESTATES.INSTRUCTIONS);
+            },
+
+            changeToGameplay: function() {
+                this.changeState(GAMESTATES.GAMEPLAY)
+
+
             },
 
             changeToPaused: function() {
-                this.currentState = GAMESTATES.PAUSED;
+                this.changeState(GAMESTATES.PAUSED)
+
+            },
+            changeToResults: function() {
+                this.changeState(GAMESTATES.RESULTS)
+
             },
 
-            changeToGameOver: function() {
-                this.currentState = GAMESTATES.GAMEOVER;
+            changeToCredits: function() {
+                this.changeState(GAMESTATES.CREDITS)
             },
 
-            isOngoing: function() {
-                return this.currentState === GAMESTATES.ONGOING;
-            },
+            unPause: function() {
+                this.changeState(this.previousState)
 
-            isPaused: function() {
-                return this.currentState === GAMESTATES.PAUSED;
-            },
-
-            isGameOver: function() {
-                return this.currentState === GAMESTATES.GAMEOVER;
             },
         };
 
@@ -58,19 +132,25 @@ export default class Game {
     }
 
     start() {
+        titleScreen.show();
+        instructionsScreen.hide();
+        resultScreen.hide();
+        creditsScreen.hide();
+
         this.player1.start();
         this.player2.start();
 
         if (length(this.playerInputs) < 2) {
+            this.state.changeToPaused();
+            overlay.children()[0].innerText = `Please connect two controllers`;
             overlay.show();
         }
     }
 
     update(timeDifferential) {
+
         //1: Get the game pads
         if (length(this.playerInputs) < 2) {
-            this.state.changeToPaused();
-            // overlay.show();
             return;
         }
 
@@ -80,64 +160,96 @@ export default class Game {
             }
         }
 
-        if (this.state.isOngoing()) {
-            overlay.hide();
-            //Handle pausing
-            if (this.togglePause()) {
-                this.state.changeToPaused();
-            }
+        switch (this.state.currentState) {
+            case GAMESTATES.TITLE:
+                startBtnObj.flicker(timeDifferential)
 
-            //Check if the game is over
-            if (!this.player1.health.isAlive()) {
-                this.endGame(this.player2, this.player1);
-            } else if (!this.player2.health.isAlive()) {
-                this.endGame(this.player1, this.player2);
-            }
 
-            //Update players
-            this.player1.update(timeDifferential, this.playerInputs[0], this.player2);
-            this.player2.update(timeDifferential, this.playerInputs[1], this.player1);
-        } else if (this.state.isPaused()) {
-            // gamepads != undefined &&
-            if (length(this.playerInputs) == 2) {
-                overlay.children()[0].innerText = `Press Start to continue`;
+                if (!startBtnObj.pressedStart && this.shouldToggleStartButton()) {
+                    startBtnObj.pressedStart = true;
 
-                overlay.show();
 
-                if (this.togglePause()) {
-                    this.state.changeToOnGoing();
+                    startBtnObj.toggleFlickerSpeed();
+                    audioElement.play();
+
+                    this.transitionToInstructionsScreen();
                 }
-            } else {
-                // console.log("Gamepads are disconnected!");
-            }
-        } else if (this.state.isGameOver()) {
-            //Change to another screen here
-            if (!gameOverScreenShown) {
-                setTimeout(() => {
-                    overlay.children()[0].innerText = `Press start to replay!`;
-                    console.log("Hello!");
+                break;
+
+            case GAMESTATES.INSTRUCTIONS:
+                startBtnObj.flicker(timeDifferential)
+
+                if (!startBtnObj.pressedStart && this.shouldToggleStartButton()) {
+
+                    startBtnObj.pressedStart = true;
+                    startBtnObj.toggleFlickerSpeed();
+                    audioElement.play();
+                    this.transitionToGameplayScreen();
+                }
+                break;
+
+            case GAMESTATES.GAMEPLAY:
+                //Check if the game is over
+                if (!this.player1.health.isAlive()) {
+                    this.endGame(this.player2, this.player1);
+                    return;
+                } else if (!this.player2.health.isAlive()) {
+                    this.endGame(this.player1, this.player2);
+                    return;
+                }
+
+                overlay.hide();
+                //Handle pausing
+                if (this.shouldToggleStartButton()) {
+                    this.state.changeToPaused();
+                }
+
+
+
+                //Update players
+                this.player1.update(timeDifferential, this.playerInputs[0], this.player2);
+                this.player2.update(timeDifferential, this.playerInputs[1], this.player1);
+                break;
+            case GAMESTATES.PAUSED:
+                if (length(this.playerInputs) == 2) {
+                    overlay.children()[0].innerText = `Press Start to continue`;
 
                     overlay.show();
-                    gameOverScreenShown = true;
-                }, 5000);
-            } else {
-                if (this.togglePause()) {
+
+                    if (this.shouldToggleStartButton()) {
+                        this.state.unPause();
+                        overlay.hide();
+                    }
+                }
+                break;
+            case GAMESTATES.RESULTS:
+                this.transitionToCreditsScreen();
+                break;
+            case GAMESTATES.CREDITS:
+                if (this.shouldToggleStartButton()) {
                     window.location.reload();
                 }
-            }
+                break;
+
+            default:
+                break;
         }
+
+
     }
 
     endGame(winner, loser) {
         winner.frameHandler.changeToWin();
         loser.frameHandler.changeToLose();
-        this.state.changeToGameOver();
-        overlay.children()[0].innerText = `Game Over! Player ${winner.ID} wins!`;
 
-        overlay.show();
+        winnerNumElem.text(winner.ID)
+
+        this.transitionToResultScreen();
+
+
     }
 
-    togglePause() {
+    shouldToggleStartButton() {
         let result = false;
 
         for (const key in this.playerInputs) {
@@ -154,5 +266,89 @@ export default class Game {
         }
 
         return result;
+    }
+
+    transitionToInstructionsScreen() {
+
+        setTimeout(() => {
+            titleScreen.fadeOut(1000);
+            startBtnObj.reset(1000);
+
+            setTimeout(() => {
+
+                instructionsScreen.fadeIn(4000);
+                this.state.changeToInstructions();
+
+            }, 2000);
+
+        }, 2500);
+
+
+
+
+    }
+
+    transitionToGameplayScreen() {
+        if (!instructionsScreenShown) {
+            instructionsScreenShown = true;
+
+            setTimeout(() => {
+                instructionsScreen.fadeOut(3000);
+                startBtnObj.reset(3000);
+                setTimeout(() => {
+
+                    gameplayScreen.fadeIn(500);
+                    this.state.changeToGameplay()
+
+                }, 5000);
+
+            }, 2000);
+
+
+
+
+        }
+
+
+    }
+
+    transitionToResultScreen() {
+        if (!resultsScreenShown) {
+            resultsScreenShown = true;
+
+            setTimeout(() => {
+                gameplayScreen.fadeOut(2500);
+
+                setTimeout(() => {
+
+
+                    resultScreen.fadeIn(500);
+                    this.state.changeToResults()
+
+                }, 3500);
+
+            }, 2500);
+
+
+        }
+    }
+
+    transitionToCreditsScreen() {
+        if (!creditsScreenShown) {
+            creditsScreenShown = true;
+
+            setTimeout(() => {
+                resultScreen.fadeOut(500);
+                setTimeout(() => {
+
+                    creditsScreen.fadeIn(500);
+                    this.state.changeToCredits()
+
+                }, 2000);
+            }, 8000);
+
+
+
+        }
     }
 }

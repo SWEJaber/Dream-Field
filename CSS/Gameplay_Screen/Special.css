@@ -1,0 +1,28 @@
+.special {
+    position: relative;
+    left: 0.1%;
+    top: 15%;
+    height: 85%;
+    width: 80%;
+    /* border: solid 1px red; */
+}
+
+.special>* {
+    height: 95%;
+}
+
+.SpecialBar {
+    width: 85%;
+    height: 50%;
+    border: rgb(23, 0, 151) groove 3px;
+}
+
+.SpecialIcon {
+    width: 20%;
+    background-color: pink;
+}
+
+.SpecialIcon>.iconImg {
+    height: 105%;
+    width: 100%;
+}

@@ -1,0 +1,52 @@
+.screen:not(#game-play) {
+    /* Matches all screens except for the game-play screen */
+    justify-content: center;
+    align-items: center;
+    top: -2.5%
+}
+
+.textSection {
+    display: flex;
+    flex-direction: column;
+    top: 10%;
+    width: 75%;
+    /* height: 50%; */
+    min-height: 55%;
+    /* border: 5px solid blue; */
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+    /* margin: auto; */
+}
+
+.textSection>p {
+    display: flex;
+    color: white;
+    font-family: 'Roboto';
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* background-color: blue; */
+    text-align: center;
+    /* border: 1px solid red; */
+    margin: auto;
+}
+
+.title {
+    font-size: 160px;
+    height: 72%;
+    font-style: italic;
+}
+
+#winnerNum {
+    display: inline-block;
+    padding: 10pt;
+}
+
+.startButton,
+#winner {
+    font-size: 50px;
+    height: 28%;
+}
+
+@import "./InstructionsScreen.css";
