@@ -1,0 +1,20 @@
+   @import "./CSS/overlay.css";
+   @import "./CSS/nonGameplayScreen.css";
+   @import "./CSS/credits.css";
+   @import "./CSS/gameplayScreen.css";
+   body {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       background-color: black;
+       /* height:100%;
+    width: 100%; */
+   }
+   
+   .screen {
+       position: fixed;
+       display: flex;
+       width: 1440px;
+       height: 1024px;
+       /* border: solid blue 1px; */
+   }

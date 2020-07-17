@@ -1,4 +1,7 @@
 @import "./InstructionsScreen.css";
+
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap'); */
+
 .screen:not(#game-play) {
     /* Matches all screens except for the game-play screen */
     justify-content: center;

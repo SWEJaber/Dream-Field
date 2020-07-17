@@ -2,6 +2,9 @@ import jQuery from "./JS/jQuery";
 window.$ = window.jQuery = jQuery;
 import Game from "./JS/Game";
 import InputHandler from "./JS/InputHandler";
+import "./style.css"
+
+
 
 let playerInputs = {};
 length = (obj) => {
