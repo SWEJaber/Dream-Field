@@ -1,4 +1,8 @@
     @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    @import "./CSS/overlay.css";
+    @import "./CSS/nonGameplayScreen.css";
+    @import "./CSS/credits.css";
+    @import "./CSS/gameplayScreen.css";
     body {
         display: flex;
         align-items: center;
@@ -15,8 +19,3 @@
         height: 1024px;
         /* border: solid blue 1px; */
     }
-    
-    @import "./overlay.css";
-    @import "./nonGameplayScreen.css";
-    @import "./credits.css";
-    @import "./gameplayScreen.css";

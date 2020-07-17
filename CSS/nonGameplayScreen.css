@@ -1,3 +1,4 @@
+@import "./InstructionsScreen.css";
 .screen:not(#game-play) {
     /* Matches all screens except for the game-play screen */
     justify-content: center;
@@ -48,5 +49,3 @@
     font-size: 50px;
     height: 28%;
 }
-
-@import "./InstructionsScreen.css";

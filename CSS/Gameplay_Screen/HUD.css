@@ -1,3 +1,4 @@
+@import "./Special.css";
 .HUD {
     display: flex;
     justify-content: space-between;
@@ -35,7 +36,6 @@
     transform: scaleX(-1);
 }
 
-@import "./Special.css";
 #PHUD-2 {
     transform: scaleX(-1);
 }
