@@ -226,6 +226,8 @@ export default class Game {
                 this.transitionToCreditsScreen();
                 break;
             case GAMESTATES.CREDITS:
+                startBtnObj.flicker(timeDifferential)
+
                 if (this.shouldToggleStartButton()) {
                     window.location.reload();
                 }
