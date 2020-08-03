@@ -1,79 +1,71 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #1: Dream Field
-
-Under construction, please be patient...
-
+# Dream Field
 # 1. Introduction
 Dream Field is grid-based two player game, where the goal is to defeat the other player through battle.
 
-![Click here to play](https://pages.git.generalassemb.ly/JaAlSaDev/Dream-Field/)
+[![Dream Field Video](/Images/Screenshots/Dream-Field-Gameplay.gif)](https://www.youtube.com/watch?v=cC_-I8DO8Rk "Click here to watch a video!")
 
-![Screenshot](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/Wide%20Attack.png)
+
 
 # 2. Game Elements
 ## 1. Aesthetics
 *Aesthetics* describe the look, sound, and feel of a game.
 
-For the time being, Dream Field contains visuals only.
+For the time being, Dream Field contains visuals only, and one sound effect for the start screen.
 
 ## 2. Mechanics
 *Mechanics* are the rules of a game. They describe the ways in which a player can reach a goal.
 
 A player can only win the game if they defeat the other player. Players can execute the following actions:
-* Attack: Players can attack each other using long-range and short-range attacks.
-* Move: Players can move on the grid horizontally or vertically.
+* **Attack**: Players can attack each other using long-range and short-range attacks.
+* **Move**: Players can move on the grid horizontally or vertically.
 
 
 
 
 ## 3. Technology
 *Technology* refers to the medium that the rest of the game elements take place in.
-* Javascript (jQuery): Game rules, controls, and gamepad.
-* CSS: Styling
-* HTML: Website structure.
-* Figma: Prototyping screens.
-* Pen and paper: Prototyping screens, game mechanics, and artwork.
-* Krita: Artwork.
+1. **Design**: 
+ * **Pen and Paper**: Prototyping screens, game mechanics, and artwork.
+ * [**Figma**](): Prototyping screens.
+ * [**Krita**](https://krita.org/en/): Artwork.
+ * [**draw.io**](https://drawio-app.com/): UML diagrams.
+ 
+1. **Implementation**:
+ * **Javascript**: Game mechanics, controls, [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API "Gamepad API").
+ * [**jQuery**](https://jquery.com/ "**jQuery**"): Screen transitions, character frame transitions.
+ * [**Parcel**](https://parceljs.org/): Web application bundler.
+ * **CSS**: Styling.
+ * **HTML**: Website structure.
+
 
 ## 4. Story
 None
 # 3. Instructions
-The game requires two gamepads to work. Before starting the game, do the following:
-1. Hover on the page.
-2. Connect two controllers.
-3. Mash the buttons on both controllers.
-4. Press and hold the start button for a bit.
+The game requires two gamepads to work.
 
-If the bottom bars starts to fill, that means the game started.
-If the above steps don't work, refresh the page, and try again.
+![Controller Layout](/Images/Screenshots/Controller_Layout.png "Controller Layout")
 
-![PlayerHUD](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/PlayerHUD.PNG)
-
-## Controls
-| **Action**  | **Instruction**  |
-|---|---|
-|   **Normal Shot** | Press X  |
-|   **Charge Shot**| Press and Hold X until the character icon turns light purple|
-|   **Special Attack** | Press B after the special bar is full (bottom bar)  |
-|   **Movement** | Press the D-pad buttons in the desired direction |
 
 # 4. Development (Screenshots)
-## Facilitating Movement
-## Facilitating Attacks
-### Long Range
-### Short Range (Special)
-## Character Artwork
-![Blob Sketch](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/Camera/Blob%20Sketches.jpg)
-![Blob Frames](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/blob_frames.png)
+## 4.1. How it Came to Be
+## 4.2. Facilitating Player Actions
+### 4.2.1. Facilitating Movement
+### 4.2.2. Facilitating Attacks
+#### Long Range
+#### Short Range (Special)
+## Design
+### Character Artwork
+### UML Diagrams
+#### Use Cases
+#### Domain Model
+### Screens
+![Paper wireframe](/Images/Screenshots/Wireframes/Gameplay%20Wireframe.jpg)
 
-## Wireframes
-![Paper wireframe](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/Wireframes/Gameplay%20Wireframe.jpg)
-
-![Figma wireframe](https://raw.git.generalassemb.ly/JaAlSaDev/Dream-Field/master/Images/Screenshots/Wireframes/Fleshed%20out%20wireframe.PNG)
+![Figma wireframe](/Images/Screenshots/Wireframes/Fleshed%20out%20wireframe.PNG)
 
 # 5. Future Work
 I'd like to add the following to my game:
 * Music and sound effects.
-* Screens: Start, controls, game over, credits.
 * Environments changing in sync with music (diverse background images and panels).
 * Enemy AI.
 * More characters.
@@ -83,8 +75,6 @@ I'd like to add the following to my game:
 # 6. Bugs and Errors
 * Character image overlaps with other objects in the environment.
 * Transition between character frames is delayed sometimes.
-* Gamepads sometimes don't connect.
-* Edge of the panels is clipped.
 
 # 7. Development Team
 * Jaber Alsalamah - Programmer
