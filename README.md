@@ -30,7 +30,7 @@ A player can only win the game if they defeat the other player. Players can exec
  * [**Krita**](https://krita.org/en/): Artwork.
  * [**draw.io**](https://drawio-app.com/): UML diagrams.
  
-1. **Implementation**:
+2. **Implementation**:
  * **Javascript**: Game mechanics, controls, [Gamepad API](https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API/Using_the_Gamepad_API "Gamepad API").
  * [**jQuery**](https://jquery.com/ "**jQuery**"): Screen transitions, character frame transitions.
  * [**Parcel**](https://parceljs.org/): Web application bundler.
@@ -43,7 +43,7 @@ None
 # 3. Instructions
 The game requires two gamepads to work.
 
-![Controller Layout](/Images/Screenshots/Controller_Layout.png "Controller Layout")
+![Controller Layout](/Images/Screenshots/Controller_Layout.PNG "Controller Layout")
 
 
 # 4. Development (Screenshots)
