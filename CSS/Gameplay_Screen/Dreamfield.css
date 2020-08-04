@@ -22,12 +22,12 @@
 }
 
 #grid-1>.panel {
-    background-image: url("../../Images/tile_red.png");
+    background-image: url("../../Images/Tile/tile_red.png");
     transform: scaleX(-1);
 }
 
 #grid-2>.panel {
-    background-image: url("../../Images/tile_blue.png");
+    background-image: url("../../Images/Tile/tile_blue.png");
 }
 
 .panel {
