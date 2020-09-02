@@ -48,6 +48,12 @@ The game requires two gamepads to work.
 
 # 4. Development (Screenshots)
 ## 4.1. How it Came to Be
+The idea came to me while I was driving back home from Effat University, where I had finished attending a Software Engineering class. I did not know what kind of game I wanted to develop, especially since I wanted to limit the implementation technology to what I had learned at the time (HTML, CSS, JS) and maybe use the gamepad API. I thought to myself, "What can I do with the grid and flexbox layouts? They're too basic!". 
+
+The word "grid" kept repeating in my head, and then suddenly, I remembered a game series that I used to play as a child; it used grids in the battle section. The game series is Mega Man Battle Network. 
+
+Developing a game like Battle Network should be fun and enough of a challenge. I can mimic the battle section by creating two different colored panels (Red and Blue), and out of the panels, I can create two colored grids using CSS Grid; after that, I can create the whole battlefield by applying the flexbox layout on the two grids.
+
 ## 4.2. Facilitating Player Actions
 ### 4.2.1. Facilitating Movement
 ### 4.2.2. Facilitating Attacks
