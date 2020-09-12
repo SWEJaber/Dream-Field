@@ -48,16 +48,76 @@ The game requires two gamepads to work.
 
 # 4. Development (Screenshots)
 ## 4.1. How it Came to Be
-The idea came to me while I was driving back home from Effat University, where I had finished attending a Software Engineering class. I did not know what kind of game I wanted to develop, especially since I wanted to limit the implementation technology to what I had learned at the time (HTML, CSS, JS) and maybe use the gamepad API. I thought to myself, "What can I do with the grid and flexbox layouts? They're too basic!". 
+The idea came to me while I was driving back home from Effat University, where I had finished attending a Software Engineering class. I did not know what kind of game I wanted to develop, especially since I wanted to limit the implementation technology to what I had learned at the time (HTML, CSS, JS) and maybe use the gamepad API. I thought to myself, "What can I do with the grid and flex layouts? They're too basic!". 
 
-The word "grid" kept repeating in my head, and then suddenly, I remembered a game series that I used to play as a child; it used grids in the battle section. The game series is Mega Man Battle Network. 
+The word "grid" kept repeating in my mind, and then suddenly, I remembered a game series that I used to play as a kid; it used grids in the battle section. The game series is Mega Man Battle Network. 
  
  ![Battle Network 6](/Images/Screenshots/Mega-Man-Battle-Network-6.gif)
 Developing a game like Battle Network should be fun and enough of a challenge. I can mimic the battle section by creating two different colored panels (Red and Blue), and out of the panels, I can create two colored grids using CSS Grid; after that, I can create the whole battlefield by applying the flexbox layout on the two grids.
+## 4.2 Creating Dreamfield (battlefield) 
+Dreamfield is a battlefield that consists of two distinctly colored grids. Each grid consists of nine panels organized in a 3x3 fashion. A panel is a platform on which, at most, one object (such as a character) can stand on.
+![Dream Field Wireframe](/Images/Screenshots/Wireframes/Dream-Field-Wireframe.png)
 
-## 4.2. Facilitating Player Actions
-### 4.2.1. Facilitating Movement
-### 4.2.2. Facilitating Attacks
+I created Dreamfield by using a div with the class "Dreamfield"
+```HTML 
+<div class="Dreamfield"></div>
+```
+The Dreamfield div has two divs with the class "grid" nested in it, grid-1 and grid-2.
+```HTML 
+<div class="grid" id="grid-1"></div>
+<div class="grid" id="grid-2"></div>
+```
+
+Each grid div has nine divs with the class "panel". The panel divs' ids are numbered from 1 to 9.
+
+```HTML 
+<div class="panel" id="1"></div>
+<div class="panel" id="2"></div>
+                .
+                .
+                .
+<div class="panel" id="9"></div>
+```
+
+Of course, without any styling, Dreamfield will look like a long column of panels. I added a rule for the Dreamfield div to place the grid divs on a row and place them at the center of the screen, and then I added a rule for both grids to place the panels in a 3x3 grid layout.
+
+```CSS
+.Dreamfield {
+    display: flex;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+```
+
+To utilize Dreamfield for gameplay purposes, I created a Grid class that stores a reference to all the panels of a grid in a 2D array. The Grid class requires an ID to fetch and store the panels of a specific grid.
+
+```JavaScript
+export default class Grid {
+    constructor(ID) {
+        this.ID = `grid-${ID}`;
+        this.rows = [];
+        let panels = $(`#grid-${ID}`).children();
+
+        //Store a reference of each visual panel to its corresponding row and column
+        for (let i = 0; i < 3; i++) {
+            let row = [];
+
+            for (let j = 0; j < 3; j++) {
+                row.push(panels[3 * i + j]);
+            }
+            this.rows.push(row);
+        }
+    }
+}
+```
+## 4.3. Facilitating Player Actions
+### 4.3.1. Facilitating Movement
+### 4.3.2. Facilitating Attacks
 #### Long Range
 #### Short Range (Special)
 ## Design
