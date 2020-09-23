@@ -43,9 +43,14 @@ A player can only win the game if they defeat the other player. Players can exec
 ### 4. Story
 None
 ## 3. Instructions
-The game requires two gamepads to work.
-
 ![Controller Layout](/Images/Screenshots/Controller_Layout.PNG "Controller Layout")
+The game requires two gamepads to work. Make sure to press any button If a controller is connected, and the browser hasn't detected it yet.
+
+I had only tested the Gamepad API with an Xbox One controller, and I'm unsure if other controllers will work. If you have a different controller and it doesn't work, let me know.
+
+The game will pause if a controller is disconnected, and an overlay message will appear, providing the appropriate instructions.
+
+
 
 
 ## 4. Development
