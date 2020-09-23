@@ -1,4 +1,4 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Dream Field
+# <img src="https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png" height="30"/> <img src="Images\Blob\Blob Icon.png" height="30" style="transform: scaleX(-1);"/> Dream Field
 ## 1. Introduction
 Dream Field is a grid-based two-player game, where the goal is to defeat the other player through battle. I developed the game as my first project for the [Software Engineering Immersive course](https://generalassemb.ly/education/software-engineering-immersive-remote) 's Front-End Development unit.
 
