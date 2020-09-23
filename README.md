@@ -136,10 +136,10 @@ I'd like to add the following to my game:
 * Transition between character frames is delayed sometimes.
 
 ## 7. Team
-||||
-| :---: | :---: | :---: |
 ||<img src="https://avatars.githubusercontent.com/JaAlSaDev" height="150"/>|<img src="https://avatars.githubusercontent.com/Ninja-jumipy2011" height="150"/>|
-|Name |Jaber Alsalamah|Ashraqat Alsalamah|
-|GitHub|<a href="https://github.com/JaAlSaDev">JaAlSaDev</a>|<a href="https://github.com/Ninja-jumipy2011">Ninja-jumipy2011</a>|
-|Role|Programmer|Artist|
+| :---: | :---: | :---: |
+|**Name** |Jaber Alsalamah|Ashraqat Alsalamah|
+|**Role**|Programmer|Artist|
+|**GitHub**|<a href="https://github.com/JaAlSaDev">JaAlSaDev</a>|<a href="https://github.com/Ninja-jumipy2011">Ninja-jumipy2011</a>|
+
 
