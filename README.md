@@ -154,5 +154,7 @@ I'd like to add the following to my game:
 |**Name** |Jaber Alsalamah|Ashraqat Alsalamah|
 |**Role**|Programmer|Artist|
 |**GitHub**|<a href="https://github.com/JaAlSaDev">JaAlSaDev</a>|<a href="https://github.com/Ninja-jumipy2011">Ninja-jumipy2011</a>|
+|**Links**|<a href="https://twitter.com/JaAlSaDev">Twitter</a>|<a href="https://www.instagram.com/ninja_jumipy2011/">Instagram</a>|
+
 
 
