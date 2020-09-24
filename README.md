@@ -1,5 +1,5 @@
 # <img src="https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png" height="40"/> <img src="Images\Blob\Blob Icon.png" height="40" style="transform: scaleX(-1);"/> Dream Field
-## 1. Introduction
+## Introduction
 Dream Field is a grid-based two-player game, where the goal is to defeat the other player through battle. I developed the game as my first project for the [Software Engineering Immersive course](https://generalassemb.ly/education/software-engineering-immersive-remote) 's Front-End Development unit.
 
 If you have two controllers, You can play Dream Field by clicking <a href="https://jaalsadev.github.io/Dream-Field/" target="_blank">here</a>, if not, you can click on the GIF below to watch a video.
@@ -7,8 +7,16 @@ If you have two controllers, You can play Dream Field by clicking <a href="https
 [![Dream Field Video](/Images/Screenshots/Dream-Field-Gameplay.gif)](https://www.youtube.com/watch?v=cC_-I8DO8Rk "Click here to watch a video!")
 
 
+## Table of Contents
 
-## 2. Game Elements
+- [Game Elements](#Game-Elements)
+- [Instructions](#Instructions)
+- [Development](#Development)
+- [Roadmap](#Roadmap)
+- [Bugs and Errors](#Bugs-and-Errors)
+- [Team](#Team)
+
+## Game Elements
 ### 1. Aesthetics
 *Aesthetics* describe the look, sound, and feel of a game.
 
@@ -42,7 +50,7 @@ A player can only win the game if they defeat the other player. Players can exec
 
 ### 4. Story
 None
-## 3. Instructions
+## Instructions
 ![Controller Layout](/Images/Screenshots/Controller_Layout.PNG "Controller Layout")
 The game requires two gamepads to work. Make sure to press any button If a controller is connected, and the browser hasn't detected it yet.
 
@@ -53,15 +61,15 @@ The game will pause if a controller is disconnected, and an overlay message will
 
 
 
-## 4. Development
-### 4.1. Inspiration
+## Development
+### Inspiration
 The idea came to me while I was driving back home from Effat University, where I had finished attending a Software Engineering class. I did not know what kind of game I wanted to develop, especially since I wanted to limit the implementation technology to what I had learned at the time (HTML, CSS, JS) and maybe use the gamepad API. I thought to myself, "What can I do with the grid and flex layouts? They're too basic!". 
 
 The word "grid" kept repeating in my mind, and then suddenly, I remembered a game series that I used to play as a kid; it used grids in the battle section. The game series is Mega Man Battle Network. 
  
  ![Battle Network 6](/Images/Screenshots/Mega-Man-Battle-Network-6.gif)
 Developing a game like Battle Network should be fun and enough of a challenge. I can mimic the battle section by creating two different colored panels (Red and Blue), and out of the panels, I can create two colored grids using CSS Grid; after that, I can create the whole battlefield by applying the flexbox layout on the two grids.
-### 4.2 Creating Dreamfield (battlefield) 
+### Creating Dreamfield (battlefield) 
 Dreamfield is a battlefield that consists of two distinctly colored grids. Each grid consists of nine panels organized in a 3x3 fashion. A panel is a platform on which, at most, one object (such as a character) can stand on.
 ![Dream Field Wireframe](/Images/Screenshots/Wireframes/Dream-Field-Wireframe.png)
 
@@ -122,12 +130,12 @@ export default class Grid {
     }
 }
 ```
-### 4.3. Facilitating Player Actions
-#### 4.3.1. Facilitating Movement
-#### 4.3.2. Facilitating Attacks
+### Facilitating Player Actions
+#### Facilitating Movement
+#### Facilitating Attacks
 ##### Long Range
 ##### Short Range (Special)
-## 5. Roadmap
+## Roadmap
 I'd like to add the following to my game:
 * Music and sound effects.
 * Environments changing in sync with music (diverse background images and panels).
@@ -136,11 +144,11 @@ I'd like to add the following to my game:
 * Code refactoring.
 * Online VS mode.
 
-## 6. Bugs and Errors
+## Bugs and Errors
 * Character image overlaps with other objects in the environment.
 * Transition between character frames is delayed sometimes.
 
-## 7. Team
+## Team
 ||<img src="https://avatars.githubusercontent.com/JaAlSaDev" height="150" width="150"/>|<img src="https://avatars.githubusercontent.com/Ninja-jumipy2011" height="150" width="150"/>|
 | :---: | :---: | :---: |
 |**Name** |Jaber Alsalamah|Ashraqat Alsalamah|
