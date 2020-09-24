@@ -1,8 +1,8 @@
 # <img src="https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png" height="40"/> <img src="Images\Blob\Blob Icon.png" height="40" style="transform: scaleX(-1);"/> Dream Field
 ## Introduction
-Dream Field is a grid-based two-player game, where the goal is to defeat the other player through battle. I developed the game as my first project for the [Software Engineering Immersive course](https://generalassemb.ly/education/software-engineering-immersive-remote) 's Front-End Development unit.
+Dream Field is a grid-based two-player competitive game. I developed the game as my first project for the [Software Engineering Immersive course](https://generalassemb.ly/education/software-engineering-immersive-remote), specifically for the Front-End Development unit.
 
-If you have two controllers, You can play Dream Field by clicking <a href="https://jaalsadev.github.io/Dream-Field/" target="_blank">here</a>, if not, you can click on the GIF below to watch a video.
+If you have two controllers, You can play Dream Field by clicking <a href="https://jaalsadev.github.io/Dream-Field/" target="_blank">here</a>, if not, click on the GIF below to watch a video.
 
 [![Dream Field Video](/Images/Screenshots/Dream-Field-Gameplay.gif)](https://www.youtube.com/watch?v=cC_-I8DO8Rk "Click here to watch a video!")
 
