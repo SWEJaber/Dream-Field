@@ -17,7 +17,7 @@ If you have two controllers, You can play Dream Field by clicking <a href="https
 - [Team](#Team)
 
 ## Theme and Game Elements
-Dream Field's (as the name suggests) is about dreams. The nature of dreams can vary; they range from ordinary to surreal; they can be exciting, frightening, magical, adventurous, phantasmagoric. They're also a source of infinite inspiration and creativity. 
+Dream Field (as the name suggests) is about dreams. The nature of dreams can vary; they range from ordinary to surreal; they can be exciting, frightening, magical, adventurous, phantasmagoric. They're also a source of infinite inspiration and creativity. 
 
 With Dream Field, I want to deliver an experience that is phantasmagoric, psychedelic, and leans towards surrealism.
 
