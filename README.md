@@ -27,6 +27,9 @@ With Dream Field, I want to deliver an experience that is phantasmagoric, psyche
 
 For the time being, Dream Field contains visuals only, and one sound effect for the start screen.
 
+Dream Field leans towards a cartoonish and simplified art style that gives off a pleasant impression for the players as well as having a high contrast between the saturated hard-edged tiles and the character's soft-edged desaturated color.
+
+
 ### 2. Mechanics
 *Mechanics* are the rules of a game. They describe the ways in which a player can reach a goal.
 
