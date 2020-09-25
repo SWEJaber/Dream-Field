@@ -10,13 +10,18 @@ If you have two controllers, You can play Dream Field by clicking <a href="https
 ## Table of Contents
 
 - [Game Elements](#Game-Elements)
-- [Instructions](#Instructions)
+- [Theme and Game Elements](#Theme-and-Game-Elements)
 - [Development](#Development)
 - [Roadmap](#Roadmap)
 - [Bugs and Errors](#Bugs-and-Errors)
 - [Team](#Team)
 
-## Game Elements
+## Theme and Game Elements
+Dream Field's (as the name suggests) is about dreams. The nature of dreams can vary; they range from ordinary to surreal; they can be exciting, frightening, magical, adventurous, phantasmagoric. They're also a source of infinite inspiration and creativity. 
+
+With Dream Field, I want to deliver an experience that is phantasmagoric, psychedelic, and leans towards surrealism.
+
+
 ### 1. Aesthetics
 *Aesthetics* describe the look, sound, and feel of a game.
 
