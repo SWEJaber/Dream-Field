@@ -21,7 +21,7 @@ Dream Field (as the name suggests) is about dreams. Dreams are a source of infin
 
 With Dream Field, I want to deliver an experience that is phantasmagoric, psychedelic, and leans towards surrealism. To provide such an experience, I broke the game down into its most essential elements by utilizing the Elemental Tetrad, a framework that the author of [The Art of Game Design](https://www.amazon.com/Art-Game-Design-Lenses-Third/dp/1138632058), Jesse Schell, devised. The Elemental Tetrad decomposes games into four essential elements: Aesthetics, Mechanics, Technology, and Story. These elements must work together to support and reinforce the game's theme as much as possible.
 
-![The Elemental Tetrad](Images\Screenshots\The-Elemental-Tetrad.jpg)
+![The Elemental Tetrad](/Images/Screenshots/The-Elemental-Tetrad.jpg)
 
 ### 1. Aesthetics
 *Aesthetics* describe the look, sound, and feel of a game.
