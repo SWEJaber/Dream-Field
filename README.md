@@ -17,34 +17,37 @@ If you have two controllers, You can play Dream Field by clicking <a href="https
 - [Team](#Team)
 
 ## Theme and Game Elements
-Dream Field (as the name suggests) is about dreams. The nature of dreams can vary; they range from ordinary to surreal; they can be exciting, frightening, magical, adventurous, phantasmagoric. They're also a source of infinite inspiration and creativity. 
+Dream Field (as the name suggests) is about dreams. Dreams are a source of infinite inspiration and creativity. Their nature can vary; they range from ordinary to surreal; they can be exciting, frightening, magical, adventurous, phantasmagoric. 
 
-With Dream Field, I want to deliver an experience that is phantasmagoric, psychedelic, and leans towards surrealism.
+With Dream Field, I want to deliver an experience that is phantasmagoric, psychedelic, and leans towards surrealism. To provide such an experience, I broke the game down into its most essential elements by utilizing the Elemental Tetrad, a framework that the author of [The Art of Game Design](https://www.amazon.com/Art-Game-Design-Lenses-Third/dp/1138632058), Jesse Schell, devised. The Elemental Tetrad decomposes games into four essential elements: Aesthetics, Mechanics, Technology, and Story. These elements must work together to support and reinforce the game's theme as much as possible.
 
+![The Elemental Tetrad](Images\Screenshots\The-Elemental-Tetrad.jpg)
 
 ### 1. Aesthetics
 *Aesthetics* describe the look, sound, and feel of a game.
 
-For the time being, Dream Field contains visuals only, and one sound effect for the start screen.
+For the time being, Dream Field contains visuals only, and one sound effect at the Title screen and Instructions screen. 
 
-Dream Field leans towards a cartoonish and simplified art style that gives off a pleasant impression for the players as well as having a high contrast between the saturated hard-edged tiles and the character's soft-edged desaturated color. The power-ups consist of pixelated blocks with every color representing certain powers.
+Dream Field leans towards a cartoonish and simplified art style that gives off a pleasant impression to players. There is high contrast between the saturated hard-edged tiles and the character's soft-edged desaturated color. The icons that represent special attacks consist of pixelated blocks, with every color representing a specific attack.
+
+We do not own the sound effect that plays at the title screen; it comes from [Mega Man X6](https://en.wikipedia.org/wiki/Mega_Man_X6), a Capcom game that came out in 2001.
 
 
 ### 2. Mechanics
-*Mechanics* are the rules of a game. They describe the ways in which a player can reach a goal.
+*Mechanics* are the rules of a game. They describe how a player can and cannot achieve a goal.
 
 A player can only win the game if they defeat the other player. Players can execute the following actions:
 * **Attack**: Players can attack each other using long-range and short-range attacks.
-* **Move**: Players can move on the grid horizontally or vertically.
-
-
-
+* **Move**: Players can move on their assigned grid horizontally or vertically.
 
 ### 3. Technology
-*Technology* refers to the medium that the rest of the game elements take place in.
+*Technology* refers to any materials, tools, and interactions that make the game possible, from paper and pencils to computer hardware.
+
+I divided the technology used to make Dream Field into two types based on its utility: Design and implementation.
+
 1. **Design**: 
  * **Pen and Paper**: Prototyping screens, game mechanics, and artwork.
- * [**Figma**](): Prototyping screens.
+ * [**Figma**](https://www.figma.com/): Prototyping screens.
  * [**Krita**](https://krita.org/en/): Artwork.
  * [**draw.io**](https://drawio-app.com/): UML diagrams.
  
@@ -55,9 +58,11 @@ A player can only win the game if they defeat the other player. Players can exec
  * **CSS**: Styling.
  * **HTML**: Website structure.
 
-
 ### 4. Story
-None
+*Story* is the sequence of events that unfolds in a game.
+
+Currently, Dream Field has no story, but we are strongly considering making one for it.
+
 ## Instructions
 ![Controller Layout](/Images/Screenshots/Controller_Layout.PNG "Controller Layout")
 The game requires two gamepads to work. Make sure to press any button If a controller is connected, and the browser hasn't detected it yet.
