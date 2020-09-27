@@ -13,5 +13,11 @@ export default class Grid {
             }
             this.rows.push(row);
         }
+
+        if (ID === "1") {
+            for (let i = 0; i < 3; i++) {
+                this.rows[i].reverse();
+            }
+        }
     }
 }
