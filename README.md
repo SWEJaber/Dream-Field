@@ -158,7 +158,6 @@ I'd like to add the following to my game:
 * Online VS mode.
 
 ## Bugs and Errors
-* Character image overlaps with other objects in the environment.
 * Transition between character frames is delayed sometimes.
 
 ## Team
