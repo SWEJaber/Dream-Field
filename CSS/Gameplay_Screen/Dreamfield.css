@@ -21,9 +21,14 @@
     row-gap: 0px;
 }
 
+#grid-1 {
+    /* background-image: url("../../Images/tile_red.png"); */
+    transform: scaleX(-1);
+}
+
 #grid-1>.panel {
     background-image: url("../../Images/tile_red.png");
-    transform: scaleX(-1);
+    /* transform: scaleX(-1); */
 }
 
 #grid-2>.panel {
