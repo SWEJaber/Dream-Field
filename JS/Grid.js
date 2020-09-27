@@ -13,5 +13,11 @@ export default class Grid {
             }
             this.rows.push(row);
         }
+
+        if (ID === "1") {
+            this.rows.forEach(row => {
+                row.reverse();
+            });
+        }
     }
 }
