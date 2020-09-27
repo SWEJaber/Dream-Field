@@ -36,13 +36,13 @@
     height: 110.5%;
 }
 
-.player {
+.playerContainer {
     position: relative;
     width: 98%;
     height: 89.5%;
 }
 
-.pl {
+.playerImg {
     position: absolute;
     left: -240%;
     top: -235%;

@@ -164,7 +164,7 @@ export default class Player {
                 isIdle: function() {
                     return (
                         this.frame ==
-                        '<img class="pl" src=' + this.blobImages.idleImg + " />"
+                        '<img class="playerImg" src=' + this.blobImages.idleImg + " />"
                     );
                 },
                 changeFrame: function(newImgSrc) {
