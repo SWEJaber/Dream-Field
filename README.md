@@ -8,13 +8,23 @@ If you have two controllers, You can play Dream Field by clicking <a href="https
 
 
 ## Table of Contents
-
-- [Theme and Game Elements](#Theme-and-Game-Elements)
 - [Instructions](#Instructions)
+- [Theme and Game Elements](#Theme-and-Game-Elements)
 - [Development](#Development)
 - [Roadmap](#Roadmap)
 - [Bugs and Errors](#Bugs-and-Errors)
 - [Team](#Team)
+
+## Instructions
+![Controller Layout](/Images/Screenshots/Controller_Layout.PNG "Controller Layout")
+The game requires two gamepads to work. Make sure to press any button If a controller is connected, and the browser hasn't detected it yet.
+
+I had only tested the Gamepad API with an Xbox One controller, and I'm unsure if other controllers will work. If you have a different controller and it doesn't work, let me know.
+
+The game will pause if a controller is disconnected, and an overlay message will appear, providing the appropriate instructions.
+
+
+
 
 ## Theme and Game Elements
 Dream Field (as the name suggests) is about dreams. Dreams are a source of infinite inspiration and creativity. Their nature can vary; they range from ordinary to surreal; they can be exciting, frightening, magical, adventurous, phantasmagoric. 
@@ -62,16 +72,6 @@ I divided the technology used to make Dream Field into two types based on its ut
 *Story* is the sequence of events that unfolds in a game.
 
 Currently, Dream Field has no story, but we are strongly considering making one for it.
-
-## Instructions
-![Controller Layout](/Images/Screenshots/Controller_Layout.PNG "Controller Layout")
-The game requires two gamepads to work. Make sure to press any button If a controller is connected, and the browser hasn't detected it yet.
-
-I had only tested the Gamepad API with an Xbox One controller, and I'm unsure if other controllers will work. If you have a different controller and it doesn't work, let me know.
-
-The game will pause if a controller is disconnected, and an overlay message will appear, providing the appropriate instructions.
-
-
 
 
 ## Development
