@@ -151,14 +151,14 @@ export default class Player {
                 frame: $(`#player${ID} > img`)[0],
                 timer: new Timer(650),
                 blobImages: {
-                    damageImg: require("../Images/blob_damaged.png"),
-                    idleImg: require("../Images/blob_idle.png"),
-                    longRangeImg: require("../Images/blob_long_range.png"),
-                    loseImg: require("../Images/blob_lose.png"),
-                    shortRangeImg: require("../Images/blob_short_range.png"),
-                    shotImg: require("../Images/blob_shot.png"),
-                    wideRangeImg: require("../Images/blob_wide_range.png"),
-                    winImg: require("../Images/blob_win.png"),
+                    damageImg: require("../Images/Blob/blob_damaged.png"),
+                    idleImg: require("../Images/Blob/blob_idle.png"),
+                    longRangeImg: require("../Images/Blob/blob_long_range.png"),
+                    loseImg: require("../Images/Blob/blob_lose.png"),
+                    shortRangeImg: require("../Images/Blob/blob_short_range.png"),
+                    shotImg: require("../Images/Blob/blob_shot.png"),
+                    wideRangeImg: require("../Images/Blob/blob_wide_range.png"),
+                    winImg: require("../Images/Blob/blob_win.png"),
                 },
 
                 isIdle: function() {
@@ -203,7 +203,7 @@ export default class Player {
                 setup: function() {
                     this.icon.css(
                         "background-image",
-                        `url("${require("../Images/Blob Icon.png")}")`
+                        `url("${require("../Images/Blob/Blob Icon.png")}")`
                     );
                 },
                 changeCharacterIconColor: function(color) {
@@ -226,10 +226,10 @@ export default class Player {
             this.specialIcon = {
                 icon: $(`#PHUD-${ID} .SpecialIcon`).children()[0],
                 speciaIcons: {
-                    unknownImg: require("../Images/question_mark.png"),
-                    shortRangeImg: require("../Images/short_range.png"),
-                    wideRangeImg: require("../Images/wide_range.png"),
-                    longRangeImg: require("../Images/long_range.png"),
+                    unknownImg: require("../Images/Special_Icons/question_mark.png"),
+                    shortRangeImg: require("../Images/Special_Icons/short_range.png"),
+                    wideRangeImg: require("../Images/Special_Icons/wide_range.png"),
+                    longRangeImg: require("../Images/Special_Icons/long_range.png"),
                 },
                 change: function(newImgSrc) {
                     this.icon.src = newImgSrc;
