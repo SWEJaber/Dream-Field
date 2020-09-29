@@ -10,7 +10,7 @@ If you have two controllers, You can play Dream Field by clicking <a href="https
 ## Table of Contents
 - [Instructions](#Instructions)
 - [Theme and Game Elements](#Theme-and-Game-Elements)
-- [Development (Work In Progress)](#Development-(Work-In-Progress))
+- [Development (Work In Progress)](#development-work-in-progress)
 - [Roadmap](#Roadmap)
 - [Bugs and Errors](#Bugs-and-Errors)
 - [Team](#Team)
