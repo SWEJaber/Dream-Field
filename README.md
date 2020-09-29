@@ -108,6 +108,8 @@ I have many ideas about the direction of Dream Field's development. Of course, t
 * Transition between character frames is delayed sometimes.
 
 ## Team
+<center>
+
 ||<img src="https://avatars.githubusercontent.com/JaAlSaDev" height="150" width="150"/>|<img src="https://avatars.githubusercontent.com/Ninja-jumipy2011" height="150" width="150"/>|
 | :---: | :---: | :---: |
 |**Name** |Jaber Alsalamah|Ashraqat Alsalamah|
@@ -115,5 +117,6 @@ I have many ideas about the direction of Dream Field's development. Of course, t
 |**GitHub**|<a href="https://github.com/JaAlSaDev">JaAlSaDev</a>|<a href="https://github.com/Ninja-jumipy2011">Ninja-jumipy2011</a>|
 |**Links**|<a href="https://twitter.com/JaAlSaDev">Twitter</a>|<a href="https://www.instagram.com/ninja_jumipy2011/">Instagram</a>|
 
+</center>
 
 
