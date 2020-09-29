@@ -16,7 +16,10 @@ If you have two controllers, You can play Dream Field by clicking <a href="https
 - [Team](#Team)
 
 ## Instructions
-![Controller Layout](/Images/Screenshots/Controller_Layout.PNG "Controller Layout")
+<p align="center">
+<img alt="Controller Layout" src="./Images/Screenshots/Controller_Layout.PNG" />
+</p>
+
 The game requires two gamepads to work. Make sure to press any button If a controller is connected, and the browser hasn't detected it yet.
 
 I had only tested the Gamepad API with an Xbox One controller, and I'm unsure if other controllers will work. If you have a different controller and it doesn't work, let me know.
@@ -31,7 +34,10 @@ Dream Field (as the name suggests) is about dreams. Dreams are a source of infin
 
 With Dream Field, I want to deliver an experience that is phantasmagoric, psychedelic, and leans towards surrealism. To provide such an experience, I broke the game down into its most essential elements by utilizing the Elemental Tetrad, a framework that the author of [The Art of Game Design](https://www.amazon.com/Art-Game-Design-Lenses-Third/dp/1138632058), Jesse Schell, devised. The Elemental Tetrad decomposes games into four essential elements: Aesthetics, Mechanics, Technology, and Story. These elements must work together to support and reinforce the game's theme as much as possible.
 
-![The Elemental Tetrad](/Images/Screenshots/The-Elemental-Tetrad.jpg)
+<p align="center">
+    <img alt="The Elemental Tetrad" src=".\Images\Screenshots\The-Elemental-Tetrad.jpg"/>
+</p>
+
 
 ### 1. Aesthetics
 *Aesthetics* describe the look, sound, and feel of a game.
@@ -79,8 +85,9 @@ Currently, Dream Field has no story, but we are strongly considering making one 
 The idea came to me while I was driving back home from Effat University, where I had finished attending a Software Engineering class. I did not know what kind of game I wanted to develop, especially since I wanted to limit the implementation technology to what I had learned at the time (HTML, CSS, JS) and maybe use the gamepad API. I thought to myself, "What can I do with the grid and flex layouts? They're too basic!". 
 
 The word "grid" kept repeating in my mind, and then suddenly, I remembered a game series that I used to play as a kid; it used grids in the battle section. The game series is Mega Man Battle Network. 
- 
- ![Battle Network 6](/Images/Screenshots/Mega-Man-Battle-Network-6.gif)
+<p align="center">
+    <img alt="Battle Network 6" src="./Images/Screenshots/Mega-Man-Battle-Network-6.gif">
+</p>
 Developing a game like Battle Network should be fun and enough of a challenge. I can mimic the battle section by creating two different colored panels (Red and Blue), and out of the panels, I can create two colored grids using CSS Grid; after that, I can create the whole battlefield by applying the flexbox layout on the two grids.
 ### Creating Dreamfield (battlefield) 
 Dreamfield is a battlefield that consists of two distinctly colored grids. Each grid consists of nine panels organized in a 3x3 fashion. A panel is a platform on which, at most, one object (such as a character) can stand on.
@@ -149,13 +156,18 @@ export default class Grid {
 ##### Long Range
 ##### Short Range (Special)
 ## Roadmap
-I'd like to add the following to my game:
-* Music and sound effects.
-* Environments changing in sync with music (diverse background images and panels).
-* Enemy AI.
-* More characters.
-* Code refactoring.
-* Online VS mode.
+I have many ideas about the direction of Dream Field's development. Of course, this repository is nothing more than the SEI course's version of the game, and the final version will differ drastically from this version.
+
+* Study game design and game development for the web.
+* Continue development on a private repository.
+* Overhaul the whole game to utilize HTML Canvas.
+* Crystallise the game's theme by reading about various subjects (e.g., sleep, the mind, dreams).
+* Provide the game's theme with focus by adding a story.
+* Create more characters.
+* Commission artists to create music, sound effects, and animations.
+* Implement various game modes (single-player, multiplayer).
+* Add more gameplay elements.
+* Figure out a way to monetize or sell the game.
 
 ## Bugs and Errors
 * Transition between character frames is delayed sometimes.
