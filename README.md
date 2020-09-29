@@ -10,7 +10,7 @@ If you have two controllers, You can play Dream Field by clicking <a href="https
 ## Table of Contents
 - [Instructions](#Instructions)
 - [Theme and Game Elements](#Theme-and-Game-Elements)
-- [Development](#Development)
+- [Development (Work In Progress)](#Development-(Work-In-Progress))
 - [Roadmap](#Roadmap)
 - [Bugs and Errors](#Bugs-and-Errors)
 - [Team](#Team)
@@ -80,7 +80,7 @@ I divided the technology used to make Dream Field into two types based on its ut
 Currently, Dream Field has no story, but we are strongly considering making one for it.
 
 
-## Development
+## Development (Work In Progress)
 ### Inspiration
 The idea came to me while I was driving back home from Effat University, where I had finished attending a Software Engineering class. I did not know what kind of game I wanted to develop, especially since I wanted to limit the implementation technology to what I had learned at the time (HTML, CSS, JS) and maybe use the gamepad API. I thought to myself, "What can I do with the grid and flex layouts? They're too basic!". 
 
@@ -89,72 +89,7 @@ The word "grid" kept repeating in my mind, and then suddenly, I remembered a gam
     <img alt="Battle Network 6" src="./Images/Screenshots/Mega-Man-Battle-Network-6.gif">
 </p>
 Developing a game like Battle Network should be fun and enough of a challenge. I can mimic the battle section by creating two different colored panels (Red and Blue), and out of the panels, I can create two colored grids using CSS Grid; after that, I can create the whole battlefield by applying the flexbox layout on the two grids.
-### Creating Dreamfield (battlefield) 
-Dreamfield is a battlefield that consists of two distinctly colored grids. Each grid consists of nine panels organized in a 3x3 fashion. A panel is a platform on which, at most, one object (such as a character) can stand on.
-![Dream Field Wireframe](/Images/Screenshots/Wireframes/Dream-Field-Wireframe.png)
 
-I created Dreamfield by using a div with the class "Dreamfield"
-```HTML 
-<div class="Dreamfield"></div>
-```
-The Dreamfield div has two divs with the class "grid" nested in it, grid-1 and grid-2.
-```HTML 
-<div class="grid" id="grid-1"></div>
-<div class="grid" id="grid-2"></div>
-```
-
-Each grid div has nine divs with the class "panel". The panel divs' ids are numbered from 1 to 9.
-
-```HTML 
-<div class="panel" id="1"></div>
-<div class="panel" id="2"></div>
-                .
-                .
-                .
-<div class="panel" id="9"></div>
-```
-
-Of course, without any styling, Dreamfield will look like a long column of panels. I added a rule for the Dreamfield div to place the grid divs on a row and place them at the center of the screen, and then I added a rule for both grids to place the panels in a 3x3 grid layout.
-
-```CSS
-.Dreamfield {
-    display: flex;
-    justify-content: center;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-}
-```
-
-To utilize Dreamfield for gameplay purposes, I created a Grid class that stores a reference to all the panels of a grid in a 2D array. The Grid class requires an ID to fetch and store the panels of a specific grid.
-
-```JavaScript
-export default class Grid {
-    constructor(ID) {
-        this.ID = `grid-${ID}`;
-        this.rows = [];
-        let panels = $(`#grid-${ID}`).children();
-
-        //Store a reference of each visual panel to its corresponding row and column
-        for (let i = 0; i < 3; i++) {
-            let row = [];
-
-            for (let j = 0; j < 3; j++) {
-                row.push(panels[3 * i + j]);
-            }
-            this.rows.push(row);
-        }
-    }
-}
-```
-### Facilitating Player Actions
-#### Facilitating Movement
-#### Facilitating Attacks
-##### Long Range
-##### Short Range (Special)
 ## Roadmap
 I have many ideas about the direction of Dream Field's development. Of course, this repository is nothing more than the SEI course's version of the game, and the final version will differ drastically from this version.
 
