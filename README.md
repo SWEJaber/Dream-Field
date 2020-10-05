@@ -1,4 +1,4 @@
-# <img src="https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png" height="40"/> <img src="Images\Blob\Blob Icon.png" height="40" style="transform: scaleX(-1);"/> Dream Field
+# <img src="https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png" height="40"/> <img src="Images\Blob\Blob Icon.png" height="40" style="transform: scaleX(-1);"/> Dream Field (SEI Version)
 ## Introduction
 Dream Field is a grid-based two-player competitive game. I developed the game as my first project for the [Software Engineering Immersive course](https://generalassemb.ly/education/software-engineering-immersive-remote), specifically for the Front-End Development unit.
 
